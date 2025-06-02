@@ -12,6 +12,11 @@
 
 #define HYPER (LG(LS(LA(LCTRL))))
 
+&sk {
+	release-after-ms = <1000>;
+	quick-release;
+};
+
 / {
 		behaviors {
 			rpi: require_prior_idle {
