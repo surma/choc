@@ -52,8 +52,214 @@
 	                , <&macro_release &kp LALT>
 	                ;
 	        };
+	        uc_apo: uc_apo {
+	            label = "UNICODE_APOSTROPHE";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp N9>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_lquot: uc_lquot {
+	            label = "UNICODE_LEFT_QUOTE";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp C>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_rquot: uc_rquot {
+	            label = "UNICODE_RIGHT_QUOTE";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp D>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_umla: uc_umla {
+	            label = "UNICODE_UMLAUT_A";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_umlu: uc_umlu {
+	            label = "UNICODE_UMLAUT_U";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N0 &kp F &kp C>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_umlo: uc_umlo {
+	            label = "UNICODE_UMLAUT_O";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N0 &kp F &kp N4>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_sz: uc_sz {
+	            label = "UNICODE_SZ";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N0 &kp D &kp F>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_euro: uc_euro {
+	            label = "UNICODE_EURO";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N0 &kp A &kp C>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_pound: uc_pound {
+	            label = "UNICODE_POUND";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N0 &kp A &kp N3>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_tm: uc_tm {
+	            label = "UNICODE_TRADEMARK";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N1 &kp N2 &kp N2>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_joy: uc_joy {
+	            label = "UNICODE_EMOJI_JOY";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp E &kp N0 &kp N2>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_sweat: uc_sweat {
+	            label = "UNICODE_EMOJI_SWEAT";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp E &kp N0 &kp N5>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
 	    };
+	    /*
+	    	
 
+{
+  "😂": [ uc_joy
+    "d83d",
+    "de02"
+  ],
+  "😅": [ sweat
+    "d83d",
+    "de05"
+  ],
+  "😭": [ cry
+    "d83d",
+    "de2d"
+  ],
+  "🤷": [ meh
+    "d83e",
+    "dd37"
+  ],
+  "❤": [ love
+    "2764"
+  ],
+  "😘": [ kiss
+    "d83d",
+    "de18"
+  ],
+  "🙈": [ monkey
+    "d83d",
+    "de48"
+  ],
+  "👀": [ eyes
+    "d83d",
+    "dc40"
+  ],
+  "🎉": [ tada
+    "d83c",
+    "df89"
+  ],
+  "🤦": [ facepalm
+    "d83e",
+    "dd26"
+  ],
+  "🫂": [ hug
+    "d83e",
+    "dec2"
+  ],
+  "🤔": [ thinkng
+    "d83e",
+    "dd14"
+  ],
+  "😏": [ ohai
+    "d83d",
+    "de0f"
+  ],
+  "🙄": [ roll
+    "d83d",
+    "de44"
+  ]
+}
+	*/
         keymap {
                 compatible = "zmk,keymap";
 
@@ -61,12 +267,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd     |  I/Alt      |  O/Ctrl    |  P     |      |
 // |      |  A  |  S/L5      |  D/L4     |  F/L3     |  G      |   |  H  | J/L3      |  K/L4       |  L/L5      |  ;     |      |
-// |      |  Z  |  X         |  C        |  V/L6     |  B      |   |  N  | M/L6      |  ,          |  .         |  /     |      |
+// |      |  Z  |  X         |  C/L7     |  V/L6     |  B      |   |  N  | M/L6      |  ,/L7       |  .         |  /     |      |
 //                           | ESC       | SHF       | SPC     |   | L 1 | L 2       | BSP         |
                         bindings = <
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
     &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
-    &trans &kp Z &kp X        &kp C       &rpil 6 V   &kp B         &kp N &rpil 6 M   &kp COMMA     &kp DOT      &kp FSLH &trans
+    &trans &kp Z &kp X        &rpil 7 C  &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
                               &kp ESC     &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp BSPC
                         >;
                 };
@@ -142,17 +348,45 @@
 
 				unicode {
 // -----------------------------------------------------------------------------------------
-// |            |       |          |          |          |        |   |              |              |              |               |       |      |
-// |            |       |          |          | em dash  |        |   |              |              |              |               |       |      |
-// |            |       |          |          |          |        |   |              |              |              |               |       |      |
-//                                 |          |          |        |   |              |              |              |
+// |            |         |          |  euro    | pound    | tm     |   |              |  u uml       |              | o uml         |       |      |
+// |            | a uml   |   sz     |          | em dash  |        |   |   apo        |  l quot      |              | r quot        |       |      |
+// |            |         |          |          |          |        |   |              |              |              |               |       |      |
+//                                   |          |          |        |   |              |              |              |
                         bindings = <
-    &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
-    &trans       &trans  &trans     &trans     &uc_dash   &trans       &trans         &trans         &trans         &trans          &trans  &trans
-    &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
-                                    &trans     &trans     &trans       &trans         &trans         &trans
+    &trans       &trans    &trans     &uc_euro   &uc_pound  &uc_tm       &trans         &uc_umlu       &trans         &uc_umlo         &trans  &trans
+    &trans       &uc_umla  &uc_sz     &trans     &uc_dash   &trans       &uc_apo        &uc_lquot      &trans         &uc_rquot        &trans  &trans
+    &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
+                                      &trans     &trans     &trans       &trans         &trans         &trans
                         >;
                 };
+
+				emoji {
+// -----------------------------------------------------------------------------------------
+// |            |         |          |          |          | think  |   |              |              |              |               |       |      |
+// |            |         | sweat    |          |          |        |   |              | joy          |              |               |       |      |
+// |            |         |          |          |          |        |   |              | see no evil  |              |               |       |      |
+//                                   |          |          |        |   |              |              |              |
+                        bindings = <
+    &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
+    &trans       &trans    &uc_sweat  &trans     &trans     &trans       &trans         &uc_joy        &trans         &trans           &trans  &trans
+    &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
+                                      &trans     &trans     &trans       &trans         &trans         &trans
+                        >;
+                };
+
+// 				template {
+// // -----------------------------------------------------------------------------------------
+// // |            |         |          |          |          |        |   |              |              |              |               |       |      |
+// // |            |         |          |          |          |        |   |              |              |              |               |       |      |
+// // |            |         |          |          |          |        |   |              |              |              |               |       |      |
+// //                                   |          |          |        |   |              |              |              |
+//                         bindings = <
+//     &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
+//     &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
+//     &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
+//                                       &trans     &trans     &trans       &trans         &trans         &trans
+//                         >;
+//                 };
         };
 };
 
