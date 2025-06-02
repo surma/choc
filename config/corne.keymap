@@ -39,6 +39,21 @@
 			};
 		};
 
+		macros {
+	        uc_dash: uc_dash {
+	            label = "UNICODE_DASH";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp N4>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -46,7 +61,7 @@
 // -----------------------------------------------------------------------------------------
 // |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd     |  I/Alt    |  O/Ctrl    |  P     |      |
 // |      |  A  |  S/L5      |  D/L4     |  F/L3     |  G      |   |  H  | J/L3      |  K/L4     |  L/L5      |  ;     |      |
-// |      |  Z  |  X         |  C        |  V        |  B      |   |  N  | M         |  ,        |  .         |  /     |      |
+// |      |  Z  |  X         |  C        |  V/L6     |  B      |   |  N  | M/L6      |  ,        |  .         |  /     |      |
 //                           | ESC       | SHF       | SPC     |   | L 1 | L 2       | BSP       |
                         bindings = <
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I &rpi LCTRL O &kp P    &trans
@@ -120,6 +135,20 @@
                         bindings = <
     &trans       &trans  &trans     &trans     &trans     &trans       &msc SCRL_UP   &mkp LCLK      &mmv MOVE_UP   &mkp RCLK       &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans  &trans
+    &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
+                                    &trans     &trans     &trans       &trans         &trans         &trans
+                        >;
+                };
+
+				unicode {
+// -----------------------------------------------------------------------------------------
+// |            |       |          |          |          |        |   |              |              |              |               |       |      |
+// |            |       |          |          | em dash  |        |   |              |              |              |               |       |      |
+// |            |       |          |          |          |        |   |              |              |              |               |       |      |
+//                                 |          |          |        |   |              |              |              |
+                        bindings = <
+    &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
+    &trans       &trans  &trans     &trans     &uc_dash   &trans       &trans         &trans         &trans         &trans          &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
                                     &trans     &trans     &trans       &trans         &trans         &trans
                         >;
