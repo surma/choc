@@ -198,68 +198,164 @@
 	                , <&macro_release &kp LALT>
 	                ;
 	        };
-	    };
-	    /*
-	    	
+	        uc_cry: uc_cry {
+	            label = "UNICODE_EMOJI_CRY";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp E &kp N2 &kp D>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_meh: uc_meh {
+	            label = "UNICODE_EMOJI_MEH";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
+	                , <&macro_tap &kp D &kp D &kp N3 &kp N7>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_kiss: uc_kiss {
+	            label = "UNICODE_EMOJI_KISS";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp E &kp N1 &kp N8>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_ohai: uc_ohai {
+	            label = "UNICODE_EMOJI_OHAI";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp E &kp N0 &kp F>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_roll: uc_roll {
+	            label = "UNICODE_EMOJI_ROLL";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp E &kp N4 &kp N4>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_monkey: uc_monkey {
+	            label = "UNICODE_EMOJI_MONKEY";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp E &kp N4 &kp N8>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_eyes: uc_eyes {
+	            label = "UNICODE_EMOJI_EYES";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
+	                , <&macro_tap &kp D &kp C &kp N4 &kp N0>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_thinking: uc_thinking {
+	            label = "UNICODE_EMOJI_THINKING";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
+	                , <&macro_tap &kp D &kp D &kp N1 &kp N4>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_facepalm: uc_facepalm {
+	            label = "UNICODE_EMOJI_FACEPALM";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
+	                , <&macro_tap &kp D &kp E &kp N2 &kp N6>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_hug: uc_hug {
+	            label = "UNICODE_EMOJI_HUG";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
+	                , <&macro_tap &kp D &kp E &kp C &kp N2>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_party: uc_party {
+	            label = "UNICODE_EMOJI_PARTY";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp D &kp N8 &kp N3 &kp C>
+	                , <&macro_tap &kp D &kp F &kp N8 &kp N9>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_love: uc_love {
+	            label = "UNICODE_EMOJI_LOVE";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N7 &kp N6 &kp N4>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+ 	    };
+    	
 
-{
-  "😂": [ uc_joy
-    "d83d",
-    "de02"
-  ],
-  "😅": [ sweat
-    "d83d",
-    "de05"
-  ],
-  "😭": [ cry
-    "d83d",
-    "de2d"
-  ],
-  "🤷": [ meh
-    "d83e",
-    "dd37"
-  ],
-  "❤": [ love
-    "2764"
-  ],
-  "😘": [ kiss
-    "d83d",
-    "de18"
-  ],
-  "🙈": [ monkey
-    "d83d",
-    "de48"
-  ],
-  "👀": [ eyes
-    "d83d",
-    "dc40"
-  ],
-  "🎉": [ tada
-    "d83c",
-    "df89"
-  ],
-  "🤦": [ facepalm
-    "d83e",
-    "dd26"
-  ],
-  "🫂": [ hug
-    "d83e",
-    "dec2"
-  ],
-  "🤔": [ thinkng
-    "d83e",
-    "dd14"
-  ],
-  "😏": [ ohai
-    "d83d",
-    "de0f"
-  ],
-  "🙄": [ roll
-    "d83d",
-    "de44"
-  ]
-}
-	*/
         keymap {
                 compatible = "zmk,keymap";
 
@@ -362,15 +458,15 @@
 
 				emoji {
 // -----------------------------------------------------------------------------------------
-// |            |         |          |          |          | think  |   |              |              |              |               |       |      |
-// |            |         | sweat    |          |          |        |   |              | joy          |              |               |       |      |
-// |            |         |          |          |          |        |   |              | see no evil  |              |               |       |      |
-//                                   |          |          |        |   |              |              |              |
+// |            |         |          |  eyes    | roll       | think  |   |              |              |              | ohai          | party    |      |
+// |            |         | sweat    |          | facpalm    |        |   | hug          | joy          | kiss         | love          |          |      |
+// |            |         |          |  cry     |            |        |   |              | meh          |              |               |          |      |
+//                                   |          |            |        |   |              |              |              |
                         bindings = <
-    &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
-    &trans       &trans    &uc_sweat  &trans     &trans     &trans       &trans         &uc_joy        &trans         &trans           &trans  &trans
-    &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
-                                      &trans     &trans     &trans       &trans         &trans         &trans
+    &trans       &trans    &trans     &uc_eyes   &uc_roll     &uc_thinking &trans         &trans         &trans         &uc_ohai         &uc_party &trans
+    &trans       &trans    &uc_sweat  &trans     &uc_facepalm &trans       &uc_hug        &uc_joy        &uc_kiss       &uc_love         &trans    &trans
+    &trans       &trans    &trans     &uc_cry    &trans       &trans       &trans         &uc_meh        &trans         &trans           &trans    &trans
+                                      &trans     &trans       &trans       &trans         &trans         &trans
                         >;
                 };
 
