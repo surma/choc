@@ -59,14 +59,14 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd     |  I/Alt    |  O/Ctrl    |  P     |      |
-// |      |  A  |  S/L5      |  D/L4     |  F/L3     |  G      |   |  H  | J/L3      |  K/L4     |  L/L5      |  ;     |      |
-// |      |  Z  |  X         |  C        |  V/L6     |  B      |   |  N  | M/L6      |  ,        |  .         |  /     |      |
-//                           | ESC       | SHF       | SPC     |   | L 1 | L 2       | BSP       |
+// |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd     |  I/Alt      |  O/Ctrl    |  P     |      |
+// |      |  A  |  S/L5      |  D/L4     |  F/L3     |  G      |   |  H  | J/L3      |  K/L4       |  L/L5      |  ;     |      |
+// |      |  Z  |  X         |  C        |  V/L6     |  B      |   |  N  | M/L6      |  ,          |  .         |  /     |      |
+//                           | ESC       | SHF       | SPC     |   | L 1 | L 2       | BSP         |
                         bindings = <
-    &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I &rpi LCTRL O &kp P    &trans
-    &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K   &rpil 5 L    &kp SEMI &trans
-    &trans &kp Z &kp X        &kp C       &kp V       &kp B         &kp N &kp M       &kp COMMA   &kp DOT      &kp FSLH &trans
+    &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
+    &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
+    &trans &kp Z &kp X        &kp C       &rpil 6 V   &kp B         &kp N &rpil 6 M   &kp COMMA     &kp DOT      &kp FSLH &trans
                               &kp ESC     &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp BSPC
                         >;
                 };
