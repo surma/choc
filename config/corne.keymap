@@ -35,15 +35,15 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd   |  I/Alt  |  O/Ctrl |  P     |      |
-// |      |  A  |  S         |  D/L4     |  F/L3     |  G      |   |  H  | J/L3    |  K/L4   |  L      |  ;     |      |
-// |      |  Z  |  X         |  C        |  V        |  B      |   |  N  | M       |  ,      |  .      |  /     |      |
-//                           | ESC       | SHF       | SPC     |   | L 1 | L 2     | BSP     |
+// |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd     |  I/Alt    |  O/Ctrl    |  P     |      |
+// |      |  A  |  S         |  D/L4     |  F/L3     |  G      |   |  H  | J/L3      |  K/L4     |  L         |  ;     |      |
+// |      |  Z  |  X         |  C        |  V        |  B      |   |  N  | M         |  ,        |  .         |  /     |      |
+//                           | ESC       | SHF       | SPC     |   | L 1 | L 2       | BSP       |
                         bindings = <
-    &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &kp U     &kp I     &kp O     &kp P    &trans
-    &trans &kp A &kp S        &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J &rpil 4 K &kp L     &kp SEMI &trans
-    &trans &kp Z &kp X        &kp C       &kp V       &kp B         &kp N &kp M     &kp COMMA &kp DOT   &kp FSLH &trans
-                              &kp ESC     &sk LSHIFT  &kp SPACE     &sl 1 &sl 2     &kp BSPC
+    &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I &rpi LCTRL O &kp P    &trans
+    &trans &kp A &kp S        &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K   &kp L        &kp SEMI &trans
+    &trans &kp Z &kp X        &kp C       &kp V       &kp B         &kp N &kp M       &kp COMMA   &kp DOT      &kp FSLH &trans
+                              &kp ESC     &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp BSPC
                         >;
                 };
                 sym {
