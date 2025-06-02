@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define HYPER (LG(LS(LA(LCTRL))))
+
 / {
 		behaviors {
 			rpi: require_prior_idle {
@@ -62,15 +64,15 @@
 
                 nav {
 // -----------------------------------------------------------------------------------------
-// |      | TAB   |      |      |       |        |   | PGU    | DEL    | UP     | BSP     |       |      |
-// |      | ESC   |      |      |       |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
-// |      |       |      |      |       | CAPS   |   |        | HOME   |        | END     |       |      |
+// |      | TAB     |      |      |       |        |   | PGU    | DEL    | UP     | BSP     |       |      |
+// |      | ESC     |      |      |       |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
+// |      | HYPER   |      |      |       | CAPS   |   |        | HOME   |        | END     |       |      |
 //                       |      |       |        |   |        |        |        |
                         bindings = <
-    &trans &kp TAB &trans &trans  &trans &trans       &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
-    &trans &kp ESC &trans &trans  &trans &trans       &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
-    &trans &trans  &trans &trans  &trans &kp CAPS     &trans   &kp HOME &trans   &kp END   &trans  &trans
-                          &trans  &trans &trans       &trans   &trans   &trans
+    &trans &kp TAB   &trans &trans  &trans &trans       &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
+    &trans &kp ESC   &trans &trans  &trans &trans       &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
+    &trans &sk HYPER &trans &trans  &trans &kp CAPS     &trans   &kp HOME &trans   &kp END   &trans  &trans
+                            &trans  &trans &trans       &trans   &trans   &trans
                         >;
                 };
 
