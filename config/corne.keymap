@@ -99,7 +99,7 @@
 // | BT 3       |       |          |          |          |        |   |              |              |              |               |       |      |
 //                                 |          |          |        |   |              |              |              |
                         bindings = <
-    &bt BT_SEL 0 &trans  &kp VOLD   &kp K_MUTE &kp VOLU   &trans       &trans         &kp LALT(LEFT) &trans         &kp LALT(RIGHT) &trans  &trans
+    &bt BT_SEL 0 &trans  &kp VOLD   &kp K_MUTE &kp VOLU   &trans       &trans         &kp LA(LEFT)   &trans         &kp LA(RIGHT)   &trans  &trans
     &bt BT_SEL 1 &trans  &kp C_PREV &kp C_PP   &kp C_NEXT &trans       &trans         &trans         &trans         &trans          &trans  &trans
     &bt BT_SEL 2 &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
                                     &trans     &trans     &trans       &trans         &trans         &trans
