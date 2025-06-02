@@ -19,7 +19,7 @@
 			    require-prior-idle-ms = <125>;
 			    bindings = <&kp>, <&kp>;
 			};
-			rpil: require_prior_idle {
+			rpil: layer_tap_custom {
 			    compatible = "zmk,behavior-hold-tap";
 			    #binding-cells = <2>;
 			    flavor = "tap-preferred";
