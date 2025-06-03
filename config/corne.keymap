@@ -458,12 +458,12 @@
 
 				emoji {
 // -----------------------------------------------------------------------------------------
-// |            |         |          |  eyes    | roll       | think  |   |              |              |              | ohai          | party    |      |
+// |            |         |          |  eyes    | roll       | think  |   | monkey       |              |              | ohai          | party    |      |
 // |            |         | sweat    |          | facpalm    |        |   | hug          | joy          | kiss         | love          |          |      |
 // |            |         |          |  cry     |            |        |   |              | meh          |              |               |          |      |
 //                                   |          |            |        |   |              |              |              |
                         bindings = <
-    &trans       &trans    &trans     &uc_eyes   &uc_roll     &uc_thinking &trans         &trans         &trans         &uc_ohai         &uc_party &trans
+    &trans       &trans    &trans     &uc_eyes   &uc_roll     &uc_thinking &uc_monkey     &trans         &trans         &uc_ohai         &uc_party &trans
     &trans       &trans    &uc_sweat  &trans     &uc_facepalm &trans       &uc_hug        &uc_joy        &uc_kiss       &uc_love         &trans    &trans
     &trans       &trans    &trans     &uc_cry    &trans       &trans       &trans         &uc_meh        &trans         &trans           &trans    &trans
                                       &trans     &trans       &trans       &trans         &trans         &trans
