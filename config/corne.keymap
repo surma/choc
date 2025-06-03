@@ -311,7 +311,7 @@
 	            bindings
 	                = <&macro_press &kp LALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
-	                , <&macro_tap &kp D &kp E &kp N2 &kp N6>
+	                , <&macro_tap &kp D &kp D &kp N3 &kp N7>
 	                , <&macro_release &kp LALT>
 	                ;
 	        };
