@@ -120,7 +120,7 @@
 	            wait-ms = <0>;
 	            bindings
 	                = <&macro_press &kp LALT>
-	                , <&macro_tap &kp N0 &kp N0 &kp F &kp N4>
+	                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6>
 	                , <&macro_release &kp LALT>
 	                ;
 	        };
@@ -368,8 +368,8 @@
                         bindings = <
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
     &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
-    &trans &kp Z &kp X        &rpil 7 C  &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
-                              &kp ESC     &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp BSPC
+    &trans &kp Z &kp X        &rpil 7 C   &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
+                              &kp BSPC    &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp ESC
                         >;
                 };
                 sym {
@@ -422,7 +422,7 @@
 //                                |          |          |              |   |              |              |              |
                         bindings = <
     &trans &bt BT_SEL 0 &kp VOLD   &kp K_MUTE &kp VOLU   &trans             &trans         &kp LA(LEFT)   &trans         &kp LA(RIGHT)   &trans  &trans
-    &trans &bt BT_SEL 1 &kp C_PREV &kp C_PP   &kp C_NEXT &trans             &trans         &trans         &trans         &trans          &trans  &trans
+    &trans &bt BT_SEL 1 &kp C_PREV &kp C_PP   &kp C_NEXT &trans             &trans         &kp LG(LBRC)   &trans         &kp LG(RBRC)    &trans  &trans
     &trans &bt BT_SEL 2 &trans     &trans     &trans     &bt BT_CLR_ALL     &trans         &trans         &trans         &trans          &trans  &trans
                                    &trans     &trans     &trans             &trans         &trans         &trans
                         >;
