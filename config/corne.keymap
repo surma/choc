@@ -369,7 +369,7 @@
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
     &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
     &trans &kp Z &kp X        &rpil 7 C   &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
-                              &kp BSPC    &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp ESC
+                              &sk HYPER   &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp ESC
                         >;
                 };
                 sym {
