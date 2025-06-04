@@ -6,31 +6,34 @@ def wait [] {
 
 def main [
   token: string
-  repo: string = "surma/choc",
-  zip: string = "~/Downloads/firmware.zip"
+  --repo: string = "surma/choc",
+  --target: string = "/Volumes/NICENANO/new.uf2"
+  --zip-file: string
 ] {
-  print "Downloading latest firmware..."
+  let zip: string = $zip_file | default -e $"($env.HOME)/Downloads/firmware.zip"
+
+  print $"Downloading latest firmware to ($zip)..."
   let headers = ["Authorization" $"Bearer ($token)"]
   let artifactUrl = http get --headers $headers $"https://api.github.com/repos/($repo)/actions/artifacts" | get artifacts | sort-by -r created_at | get 0.archive_download_url
   http get --headers $headers $artifactUrl | save -f $zip
   print "Done."
 
-  print "Please connect the left board and put it into bootloader mode. Press any key..."
+  print "Please connect the left board and put it into bootloader mode..."
   wait
   print "Flashing..."
-  # try {
-    unzip -p $zip corne_left-nice_nano_v2-zmk.uf2 | save -r -p /Volumes/NICENANO/new.uf2
+  try {
+    unzip -p $"($zip)" corne_left-nice_nano_v2-zmk.uf2 | save -rp $target
     print "Done."
-  # } catch {|err|
-  #   print $"Something went wrong: ($err.msg)"
-  # }
-  print "Please connect the right board and put it into bootloader mode. Press any key..."
+  } catch {|err|
+    print $"Something went wrong: ($err.msg)"
+  }
+  print "Please connect the right board and put it into bootloader mode..."
   wait
   print "Flashing..."
-  # try {
-    unzip -p $zip corne_right-nice_nano_v2-zmk.uf2 | save -r -p /Volumes/NICENANO/new.uf2
+  try {
+    unzip -p $zip corne_right-nice_nano_v2-zmk.uf2 | save -rp $target
     print "Done."
-  # } catch {|err|
-  #   print $"Something went wrong: ($err.msg)"
-  # }
+  } catch {|err|
+    print $"Something went wrong: ($err.msg)"
+  }
 }
