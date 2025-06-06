@@ -388,15 +388,15 @@
 
                 nav {
 // -----------------------------------------------------------------------------------------
-// |      | TAB     |      |      |       | CAPS   |   | PGU    | DEL    | UP     | BSP     |       |      |
-// |      | ESC     |      |      |       |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
-// |      | HYPER   |      |      |       |        |   |        | HOME   |        | END     |       |      |
-  //                       |      |       |        |   |        |        |        |
+// |      | TAB     |      |      |         |        |   | PGU    | DEL    | UP     | BSP     |       |      |
+// |      | ESC     |      |      |         |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
+// |      | HYPER   |      |      |         |        |   |        | HOME   |        | END     |       |      |
+  //                       |      |         |        |   |        |        |        |
                         bindings = <
-    &trans &kp TAB   &trans &trans  &trans &kp CAPS     &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
-    &trans &kp ESC   &trans &trans  &trans &trans       &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
-    &trans &sk HYPER &trans &trans  &trans &trans       &trans   &kp HOME &trans   &kp END   &trans  &trans
-                            &trans  &trans &trans       &trans   &trans   &trans
+    &trans &kp TAB   &trans &trans  &trans   &trans &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
+    &trans &kp ESC   &trans &trans  &trans   &trans       &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
+    &trans &sk HYPER &trans &trans  &trans   &trans       &trans   &kp HOME &trans   &kp END   &trans  &trans
+                            &trans  &kp CAPS &trans       &trans   &trans   &trans
                         >;
                 };
 
