@@ -11,6 +11,7 @@
 
 
 #define HYPER (LG(LS(LA(LCTRL))))
+#define MEH (LG(LA(LCTRL)))
 
 &sk {
 	release-after-ms = <1000>;
@@ -369,7 +370,7 @@
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
     &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
     &trans &kp Z &kp X        &rpil 7 C   &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
-                              &sk HYPER   &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp ESC
+                              &sk MEH     &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp ESC
                         >;
                 };
                 sym {
@@ -395,7 +396,7 @@
                         bindings = <
     &trans &kp TAB   &trans &trans  &trans   &trans &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
     &trans &kp ESC   &trans &trans  &trans   &trans       &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
-    &trans &sk HYPER &trans &trans  &trans   &trans       &trans   &kp HOME &trans   &kp END   &trans  &trans
+    &trans &sk MEH   &trans &trans  &trans   &trans       &trans   &kp HOME &trans   &kp END   &trans  &trans
                             &trans  &trans   &trans       &trans   &trans   &kp CAPS
                         >;
                 };
