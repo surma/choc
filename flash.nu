@@ -4,10 +4,40 @@ def wait [] {
   ["continue"] | input list
 }
 
+def auto_detect_target [] {
+  let os = (sys host | get name)
+
+  if $os == "Darwin" {
+    "/Volumes/NICENANO/new.uf2"
+  } else {
+    let device = (udisksctl status | from ssv | drop nth 0 | where MODEL =~ Adafruit | update DEVICE { $"/dev/($in)" } | get DEVICE.0)
+    let mount_point = (udisksctl mount -b $device | split row " " | last)
+    $"($mount_point)/new.uf2"
+  }
+}
+
+def get_target_path [target?: string] {
+  if ($target | is-empty) {
+    auto_detect_target
+  } else {
+    $target
+  }
+}
+
+def flash_firmware [zip: string, firmware_file: string, target_path: string] {
+  print "Flashing..."
+  try {
+    unzip -p $zip $firmware_file | save -rp $target_path
+    print "Done."
+  } catch {|err|
+    print $"Something went wrong: ($err.msg)"
+  }
+}
+
 def main [
   token: string
   --repo: string = "surma/choc",
-  --target: string = "/Volumes/NICENANO/new.uf2"
+  --target: string
   --zip-file: string
 ] {
   let zip: string = $zip_file | default -e $"($env.HOME)/Downloads/firmware.zip"
@@ -20,20 +50,11 @@ def main [
 
   print "Please connect the left board and put it into bootloader mode..."
   wait
-  print "Flashing..."
-  try {
-    unzip -p $"($zip)" corne_left-nice_nano_v2-zmk.uf2 | save -rp $target
-    print "Done."
-  } catch {|err|
-    print $"Something went wrong: ($err.msg)"
-  }
+  let left_target = (get_target_path $target)
+  flash_firmware $zip "corne_left-nice_nano_v2-zmk.uf2" $left_target
+
   print "Please connect the right board and put it into bootloader mode..."
   wait
-  print "Flashing..."
-  try {
-    unzip -p $zip corne_right-nice_nano_v2-zmk.uf2 | save -rp $target
-    print "Done."
-  } catch {|err|
-    print $"Something went wrong: ($err.msg)"
-  }
+  let right_target = (get_target_path $target)
+  flash_firmware $zip "corne_right-nice_nano_v2-zmk.uf2" $right_target
 }
