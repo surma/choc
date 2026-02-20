@@ -38,6 +38,13 @@
 			    require-prior-idle-ms = <125>;
 			    bindings = <&mo>, <&kp>;
 			};
+			meh_esc: meh_esc {
+			    compatible = "zmk,behavior-hold-tap";
+			    #binding-cells = <2>;
+			    flavor = "balanced";
+			    tapping-term-ms = <200>;
+			    bindings = <&kp>, <&kp>;
+			};
 		};
 
 		macros {
@@ -86,42 +93,6 @@
 	            bindings
 	                = <&macro_press &kp LALT>
 	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp D>
-	                , <&macro_release &kp LALT>
-	                ;
-	        };
-	        uc_umla: uc_umla {
-	            label = "UNICODE_UMLAUT_A";
-	            compatible = "zmk,behavior-macro";
-	            #binding-cells = <0>;
-	            tap-ms = <0>;
-	            wait-ms = <0>;
-	            bindings
-	                = <&macro_press &kp LALT>
-	                , <&macro_tap &kp N0 &kp N0 &kp E &kp N4>
-	                , <&macro_release &kp LALT>
-	                ;
-	        };
-	        uc_umlu: uc_umlu {
-	            label = "UNICODE_UMLAUT_U";
-	            compatible = "zmk,behavior-macro";
-	            #binding-cells = <0>;
-	            tap-ms = <0>;
-	            wait-ms = <0>;
-	            bindings
-	                = <&macro_press &kp LALT>
-	                , <&macro_tap &kp N0 &kp N0 &kp F &kp C>
-	                , <&macro_release &kp LALT>
-	                ;
-	        };
-	        uc_umlo: uc_umlo {
-	            label = "UNICODE_UMLAUT_O";
-	            compatible = "zmk,behavior-macro";
-	            #binding-cells = <0>;
-	            tap-ms = <0>;
-	            wait-ms = <0>;
-	            bindings
-	                = <&macro_press &kp LALT>
-	                , <&macro_tap &kp N0 &kp N0 &kp F &kp N6>
 	                , <&macro_release &kp LALT>
 	                ;
 	        };
@@ -354,6 +325,66 @@
 	                , <&macro_release &kp LALT>
 	                ;
 	        };
+	        uc_cent: uc_cent {
+	            label = "UNICODE_CENT";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N0 &kp A &kp N2>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_accent: uc_accent {
+	            label = "UNICODE_COMBINING_ACUTE";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N3 &kp N0 &kp N1>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_diaer: uc_diaer {
+	            label = "UNICODE_COMBINING_DIAERESIS";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N3 &kp N0 &kp N8>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_micro: uc_micro {
+	            label = "UNICODE_MICRO";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N0 &kp N3 &kp B &kp C>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
+	        uc_ellipsis: uc_ellipsis {
+	            label = "UNICODE_ELLIPSIS";
+	            compatible = "zmk,behavior-macro";
+	            #binding-cells = <0>;
+	            tap-ms = <0>;
+	            wait-ms = <0>;
+	            bindings
+	                = <&macro_press &kp LALT>
+	                , <&macro_tap &kp N2 &kp N0 &kp N2 &kp N6>
+	                , <&macro_release &kp LALT>
+	                ;
+	        };
  	    };
     	
 
@@ -365,65 +396,65 @@
 // |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd     |  I/Alt      |  O/Ctrl    |  P     |      |
 // |      |  A  |  S/L5      |  D/L4     |  F/L3     |  G      |   |  H  | J/L3      |  K/L4       |  L/L5      |  ;     |      |
 // |      |  Z  |  X         |  C/L7     |  V/L6     |  B      |   |  N  | M/L6      |  ,/L7       |  .         |  /     |      |
-//                           | ESC       | SHF       | SPC     |   | L 1 | L 2       | BSP         |
+//                           | MEH/ESC   | SHF       | SPC     |   | L 1 | L 2       | UC          |
                         bindings = <
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
     &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
     &trans &kp Z &kp X        &rpil 7 C   &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
-                              &sk MEH     &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &kp ESC
+                              &meh_esc MEH ESC  &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &sl 6
                         >;
                 };
                 sym {
 // -----------------------------------------------------------------------------------------
 // |      |  ^      |  <      |  =      |  >      |  #      |   |  `       |  [     |  "     |  ]      |  !      |      |
-// |      |  /      |  @      |  &      |  -      |  +      |   |  '       |  (     |  :     |  )      |  ;      |      |
-// |      |  \      |  _      |  *      |  ~      |  %      |   |  $       |  {     |  |     |  }      |  ?      |      |
+// |      |  /      |  @      |  *      |  -      |  +      |   |  '       |  (     |  :     |  )      |  ;      |      |
+// |      |  \      |  _      |  &      |  ~      |  %      |   |  $       |  {     |  |     |  }      |  ?      |      |
 //                            |         |         |         |   |          |        |        |
                         bindings = <
    &trans  &kp CRRT  &kp LT    &kp EQUAL &kp GT    &kp HASH       &kp GRAVE &kp LBKT &kp DQT  &kp RBKT  &kp EXCL  &trans
-   &trans  &kp SLASH &kp AT    &kp AMPS  &kp MINUS &kp PLUS       &kp SQT   &kp LPAR &kp COLN &kp RPAR  &kp SEMI  &trans
-   &trans  &kp BSLH  &kp UNDER &kp ASTRK &kp TILDE &kp PRCNT      &kp DLLR  &kp LBRC &kp PIPE &kp RBRC  &kp QMARK &trans
+   &trans  &kp SLASH &kp AT    &kp ASTRK &kp MINUS &kp PLUS       &kp SQT   &kp LPAR &kp COLN &kp RPAR  &kp SEMI  &trans
+   &trans  &kp BSLH  &kp UNDER &kp AMPS  &kp TILDE &kp PRCNT      &kp DLLR  &kp LBRC &kp PIPE &kp RBRC  &kp QMARK &trans
                                &trans    &trans    &trans         &kp RET   &trans   &kp RALT
                         >;
                 };
 
                 nav {
 // -----------------------------------------------------------------------------------------
-// |      | TAB     |      |      |         |        |   | PGU    | DEL    | UP     | BSP     |       |      |
-// |      | ESC     |      |      |         |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
-// |      | HYPER   |      |      |         |        |   |        | HOME   |        | END     |       |      |
-  //                       |      |         |        |   |        |        |        |
+// |      | TAB     | ALT+LEFT |      | ALT+RIGHT |        |   | PGU    | DEL    | UP     | BSP     |       |      |
+// |      | ESC     | CMD+SFT+[|      | CMD+SFT+] |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
+// |      | HYPER   | CTL+LEFT |      | CTL+RIGHT |        |   | CMD+D  | HOME   | CAPS   | END     |       |      |
+  //                           |      |           |        |   |        |        |        |
                         bindings = <
-    &trans &kp TAB   &trans &trans  &trans   &trans &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
-    &trans &kp ESC   &trans &trans  &trans   &trans       &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
-    &trans &sk MEH   &trans &trans  &trans   &trans       &trans   &kp HOME &trans   &kp END   &trans  &trans
-                            &trans  &trans   &trans       &trans   &trans   &kp CAPS
+    &trans &kp TAB   &kp LA(LEFT)    &trans  &kp LA(RIGHT)   &trans       &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
+    &trans &kp ESC   &kp LG(LS(LBRC)) &trans &kp LG(LS(RBRC)) &trans     &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
+    &trans &sk MEH   &kp LC(LEFT)    &trans  &kp LC(RIGHT)   &trans       &kp LG(D) &kp HOME &kp CAPS &kp END  &trans  &trans
+                                     &trans  &trans           &trans       &trans   &trans   &trans
                         >;
                 };
 
                 num {
 // -----------------------------------------------------------------------------------------
-// |      |       |      |      |       |        |   |   -     |   7    |   8    |    9    |       |      |
-// |      |       |      |      |       |        |   |   ,     |   4    |   5    |    6    |       |      |
-// |      |       |      |      |       |        |   |   .     |   1    |   2    |    3    |       |      |
-//                       |      |       |        |   |         |   0    |        |
+// |      |       |      |      |   /   |   *    |   |         |   7    |   8    |    9    |       |      |
+// |      |       |      |      |   -   |   +    |   |         |   4    |   5    |    6    |       |      |
+// |      |       |      |      |   ,   |   .    |   |         |   1    |   2    |    3    |       |      |
+//                       |      |       |        |   |         |   0    |  BSP   |
                         bindings = <
-    &trans &trans  &trans &trans  &trans &trans       &kp MINUS &kp N7   &kp N8   &kp N9    &trans  &trans
-    &trans &trans  &trans &trans  &trans &trans       &kp COMMA &kp N4   &kp N5   &kp N6    &trans  &trans
-    &trans &trans  &trans &trans  &trans &trans       &kp DOT   &kp N1   &kp N2   &kp N3    &trans  &trans
-                          &trans  &trans &trans       &trans    &kp N0   &trans
+    &trans &trans  &trans &trans &kp FSLH &kp ASTRK   &trans    &kp N7   &kp N8   &kp N9    &trans  &trans
+    &trans &trans  &trans &trans &kp MINUS &kp PLUS   &trans    &kp N4   &kp N5   &kp N6    &trans  &trans
+    &trans &trans  &trans &trans &kp COMMA &kp DOT    &trans    &kp N1   &kp N2   &kp N3    &trans  &trans
+                          &trans &trans    &trans      &trans    &kp N0   &kp BSPC
                         >;
                 };
 
 		        media {
 // -----------------------------------------------------------------------------------------
-// |      | BT 1       | VOLD     | MUTE     | VOLU     |              |   |              | ALT+LEFT     |              | ALT+RIGHT     |       |      |
+// |      | BT 1       | VOLD     | MUTE     | VOLU     |              |   |              |              |              | SCREENSHOT    |       |      |
 // |      | BT 2       | PREV     | PLAY     | NEXT     |              |   |              |              |              |               |       |      |
 // |      | BT 3       |          |          |          | BT CLR       |   |              |              |              |               |       |      |
 //                                |          |          |              |   |              |              |              |
                         bindings = <
-    &trans &bt BT_SEL 0 &kp VOLD   &kp K_MUTE &kp VOLU   &trans             &trans         &kp LA(LEFT)   &trans         &kp LA(RIGHT)   &trans  &trans
-    &trans &bt BT_SEL 1 &kp C_PREV &kp C_PP   &kp C_NEXT &trans             &trans         &kp LG(LBRC)   &trans         &kp LG(RBRC)    &trans  &trans
+    &trans &bt BT_SEL 0 &kp VOLD   &kp K_MUTE &kp VOLU   &trans             &trans         &trans         &trans         &trans          &kp LG(LS(N4)) &trans
+    &trans &bt BT_SEL 1 &kp C_PREV &kp C_PP   &kp C_NEXT &trans             &trans         &trans         &trans         &trans          &trans  &trans
     &trans &bt BT_SEL 2 &trans     &trans     &trans     &bt BT_CLR_ALL     &trans         &trans         &trans         &trans          &trans  &trans
                                    &trans     &trans     &trans             &trans         &trans         &trans
                         >;
@@ -445,14 +476,14 @@
 
 				unicode {
 // -----------------------------------------------------------------------------------------
-// |            |         |          |  euro    | pound    | tm     |   |              |  u uml       |              | o uml         |       |      |
-// |            | a uml   |   sz     |          | em dash  |        |   |   apo        |  l quot      |              | r quot        |       |      |
-// |            |         |          |          |          |        |   |              |              |              |               |       |      |
+// |            | pound   | cent     | accent   | euro     | tm     |   |              |              |              |               |       |      |
+// |            |         |   sz     |          | em dash  |        |   |   apo        |  l quot      | diaeresis    | r quot        |       |      |
+// |            |         |          |          |          |        |   |              |  micro       |              | ellipsis      |       |      |
 //                                   |          |          |        |   |              |              |              |
                         bindings = <
-    &trans       &trans    &trans     &uc_euro   &uc_pound  &uc_tm       &trans         &uc_umlu       &trans         &uc_umlo         &trans  &trans
-    &trans       &uc_umla  &uc_sz     &trans     &uc_dash   &trans       &uc_apo        &uc_lquot      &trans         &uc_rquot        &trans  &trans
-    &trans       &trans    &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans           &trans  &trans
+    &trans       &uc_pound &uc_cent   &uc_accent &uc_euro   &uc_tm       &trans         &trans         &trans         &trans           &trans  &trans
+    &trans       &trans    &uc_sz     &trans     &uc_dash   &trans       &uc_apo        &uc_lquot      &uc_diaer      &uc_rquot        &trans  &trans
+    &trans       &trans    &trans     &trans     &trans     &trans       &trans         &uc_micro      &trans         &uc_ellipsis     &trans  &trans
                                       &trans     &trans     &trans       &trans         &trans         &trans
                         >;
                 };
