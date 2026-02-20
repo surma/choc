@@ -51,10 +51,10 @@ def main [
   print "Please connect the left board and put it into bootloader mode..."
   wait
   let left_target = (get_target_path $target)
-  flash_firmware $zip "corne_left-nice_nano_v2-zmk.uf2" $left_target
+  flash_firmware $zip "corne_left-nice_nano-zmk.uf2" $left_target
 
   print "Please connect the right board and put it into bootloader mode..."
   wait
   let right_target = (get_target_path $target)
-  flash_firmware $zip "corne_right-nice_nano_v2-zmk.uf2" $right_target
+  flash_firmware $zip "corne_right-nice_nano-zmk.uf2" $right_target
 }
