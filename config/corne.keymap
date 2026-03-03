@@ -41,8 +41,9 @@
 			meh_esc: meh_esc {
 			    compatible = "zmk,behavior-hold-tap";
 			    #binding-cells = <2>;
-			    flavor = "balanced";
+			    flavor = "tap-preferred";
 			    tapping-term-ms = <200>;
+			    quick-tap-ms = <200>;
 			    bindings = <&kp>, <&kp>;
 			};
 		};
@@ -396,12 +397,12 @@
 // |      |  Q  |  W/Ctrl    |  E/Alt    |  R/Cmd    |  T      |   |  Y  | U/Cmd     |  I/Alt      |  O/Ctrl    |  P     |      |
 // |      |  A  |  S/L5      |  D/L4     |  F/L3     |  G      |   |  H  | J/L3      |  K/L4       |  L/L5      |  ;     |      |
 // |      |  Z  |  X         |  C/L7     |  V/L6     |  B      |   |  N  | M/L6      |  ,/L7       |  .         |  /     |      |
-//                           | MEH/ESC   | SHF       | SPC     |   | L 1 | L 2       | UC          |
+//                           | MEH/ESC   | SHF       | SPC     |   | SYM | NAV       | TAPMOD      |
                         bindings = <
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
     &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
     &trans &kp Z &kp X        &rpil 7 C   &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
-                              &meh_esc MEH ESC  &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &sl 6
+                              &meh_esc MEH ESC  &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &sl 8
                         >;
                 };
                 sym {
@@ -437,12 +438,12 @@
 // |      |       |      |      |   /   |   *    |   |         |   7    |   8    |    9    |       |      |
 // |      |       |      |      |   -   |   +    |   |         |   4    |   5    |    6    |       |      |
 // |      |       |      |      |   ,   |   .    |   |         |   1    |   2    |    3    |       |      |
-//                       |      |       |        |   |         |   0    |  BSP   |
+//                       |      |       |        |   |         |  BSP   |   0    |
                         bindings = <
     &trans &trans  &trans &trans &kp FSLH &kp ASTRK   &trans    &kp N7   &kp N8   &kp N9    &trans  &trans
     &trans &trans  &trans &trans &kp MINUS &kp PLUS   &trans    &kp N4   &kp N5   &kp N6    &trans  &trans
     &trans &trans  &trans &trans &kp COMMA &kp DOT    &trans    &kp N1   &kp N2   &kp N3    &trans  &trans
-                          &trans &trans    &trans      &trans    &kp N0   &kp BSPC
+                          &trans &trans    &trans      &trans    &kp BSPC &kp N0
                         >;
                 };
 
@@ -499,6 +500,20 @@
     &trans       &trans    &uc_sweat  &trans     &uc_facepalm &trans       &uc_hug        &uc_joy        &uc_kiss       &uc_love         &trans    &trans
     &trans       &trans    &trans     &uc_cry    &trans       &trans       &trans         &uc_meh        &trans         &trans           &trans    &trans
                                       &trans     &trans       &trans       &trans         &trans         &trans
+                        >;
+                };
+
+                tapmods {
+// -----------------------------------------------------------------------------------------
+// |      |       |      |      |      |        |   |        |        |        |         | Ctrl  |      |
+// |      |       |      |      |      |        |   |        |        |        |         | Alt   |      |
+// |      |       |      |      |      |        |   |        |        |        |         | Super |      |
+//                       |  UC  | MEDIA |  NUM   |   |        |        |        |
+                        bindings = <
+    &trans &trans  &trans &trans &trans &trans   &trans    &trans    &trans    &trans    &sk LCTRL &trans
+    &trans &trans  &trans &trans &trans &trans   &trans    &trans    &trans    &trans    &sk LALT  &trans
+    &trans &trans  &trans &trans &trans &trans   &trans    &trans    &trans    &trans    &sk LGUI  &trans
+                  &tog 6 &tog 4  &tog 3          &trans    &trans    &trans
                         >;
                 };
 
