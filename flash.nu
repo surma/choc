@@ -39,8 +39,13 @@ def main [
   --repo: string = "surma/choc",
   --target: string
   --zip-file: string
+  --left
+  --right
 ] {
   let zip: string = $zip_file | default -e $"($env.HOME)/Downloads/firmware.zip"
+
+  let flash_left = $left or (not $left and not $right)
+  let flash_right = $right or (not $left and not $right)
 
   print $"Downloading latest firmware to ($zip)..."
   let headers = ["Authorization" $"Bearer ($token)"]
@@ -48,13 +53,17 @@ def main [
   http get --headers $headers $artifactUrl | save -f $zip
   print "Done."
 
-  print "Please connect the left board and put it into bootloader mode..."
-  wait
-  let left_target = (get_target_path $target)
-  flash_firmware $zip "corne_left-nice_nano-zmk.uf2" $left_target
+  if $flash_left {
+    print "Please connect the left board and put it into bootloader mode..."
+    wait
+    let left_target = (get_target_path $target)
+    flash_firmware $zip "corne_left-nice_nano-zmk.uf2" $left_target
+  }
 
-  print "Please connect the right board and put it into bootloader mode..."
-  wait
-  let right_target = (get_target_path $target)
-  flash_firmware $zip "corne_right-nice_nano-zmk.uf2" $right_target
+  if $flash_right {
+    print "Please connect the right board and put it into bootloader mode..."
+    wait
+    let right_target = (get_target_path $target)
+    flash_firmware $zip "corne_right-nice_nano-zmk.uf2" $right_target
+  }
 }
