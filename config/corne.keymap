@@ -51,6 +51,7 @@
 			    #binding-cells = <1>;
 			    release-after-ms = <5000>;
 			    quick-release;
+			    ignore-modifiers;
 			    bindings = <&kp>;
 			};
 		};
@@ -409,7 +410,7 @@
     &trans &kp Q &rpi LCTRL W &rpi LALT E &rpi LCMD R &kp T         &kp Y &rpi LCMD U &rpi LALT I   &rpi LCTRL O &kp P    &trans
     &trans &kp A &rpil 5 S    &rpil 4 D   &rpil 3 F   &kp G         &kp H &rpil 3 J   &rpil 4 K     &rpil 5 L    &kp SEMI &trans
     &trans &kp Z &kp X        &rpil 7 C   &rpil 6 V   &kp B         &kp N &rpil 6 M   &rpil 7 COMMA &kp DOT      &kp FSLH &trans
-                              &meh_esc MEH ESC  &sk LSHIFT  &kp SPACE     &sl 1 &sl 2       &sl 8
+                              &meh_esc MEH ESC  &skm LSHIFT &kp SPACE     &sl 1 &sl 2       &sl 8
                         >;
                 };
                 sym {
@@ -435,7 +436,7 @@
                         bindings = <
     &trans &kp TAB   &kp LA(LEFT)    &trans  &kp LA(RIGHT)   &trans       &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
     &trans &kp ESC   &kp LG(LS(LBRC)) &trans &kp LG(LS(RBRC)) &trans     &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
-    &trans &sk MEH   &kp LC(LEFT)    &trans  &kp LC(RIGHT)   &trans       &kp LG(D) &kp HOME &kp CAPS &kp END  &trans  &trans
+    &trans &skm MEH  &kp LC(LEFT)    &trans  &kp LC(RIGHT)   &trans       &kp LG(D) &kp HOME &kp CAPS &kp END  &trans  &trans
                                      &trans  &trans           &trans       &trans   &trans   &trans
                         >;
                 };
