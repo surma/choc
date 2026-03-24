@@ -513,15 +513,29 @@
 
                 tapmods {
 // -----------------------------------------------------------------------------------------
-// |      | BT1   |      |      |      | BT CLR |   |        |        |        |         | Ctrl  |      |
-// |      | BT2   |      |      |      |        |   |        |        |        |         | Alt   |      |
-// |      | BT3   |      |      |      |        |   |        |        |        |         | Super |      |
+// |      |       |      |      |      |        |   |        |        |        |         | Ctrl  |      |
+// |      |       |      |      |      |        |   |        |        |        |         | Alt   |      |
+// |      |       |      |      |      |        |   |        |        | KBD    |         | Super |      |
 //                       |  UC  | MEDIA |  NUM   |   |        |        |        |
                         bindings = <
-    &trans       &bt BT_SEL 0 &trans &trans &trans &bt BT_CLR   &trans    &trans    &trans    &trans    &skm LCTRL &trans
-    &trans       &bt BT_SEL 1 &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &skm LALT  &trans
-    &trans       &bt BT_SEL 2 &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &skm LGUI  &trans
-                 &sl 6   &sl 4  &sl 3                          &trans    &trans    &trans
+    &trans       &trans       &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &skm LCTRL &trans
+    &trans       &trans       &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &skm LALT  &trans
+    &trans       &trans       &trans &trans &trans &trans       &trans    &trans    &sl 9     &trans    &skm LGUI  &trans
+                 &sl 6        &sl 4  &sl 3                          &trans    &trans    &trans
+                        >;
+                };
+
+                keyboard {
+// -----------------------------------------------------------------------------------------
+// |      | BT1   |      |      |      | BT CLR |   |        |        |        |         |       |      |
+// |      | BT2   |      |      |      |        |   |        |        |        |         |       |      |
+// |      | BT3   |      |      |      |        |   |        |        |        |         |       |      |
+//                       |      |       |       |   |        |        |        |
+                        bindings = <
+    &trans       &bt BT_SEL 0 &trans &trans &trans &bt BT_CLR   &trans    &trans    &trans    &trans    &trans &trans
+    &trans       &bt BT_SEL 1 &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &trans &trans
+    &trans       &bt BT_SEL 2 &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &trans &trans
+                 &trans       &trans  &trans                         &trans    &trans    &trans
                         >;
                 };
 
