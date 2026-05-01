@@ -515,12 +515,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |       |      |      |      |        |   |        |        |        |         | Ctrl  |      |
 // |      |       |      |      |      |        |   |        |        |        |         | Alt   |      |
-// |      |       |      |      |      |        |   |        |        | KBD    |         | Super |      |
+// |      |       |      |      |      |        |   | KBD    |        |        |         | Super |      |
 //                       |  UC  | MEDIA |  NUM   |   |        |        |        |
                         bindings = <
     &trans       &trans       &trans &trans &trans &trans       &kp LG(LA(SPACE)) &trans    &trans    &trans    &skm LCTRL &trans
     &trans       &trans       &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &skm LALT  &trans
-    &trans       &trans       &trans &trans &trans &trans       &trans    &trans    &sl 9     &trans    &skm LGUI  &trans
+    &trans       &trans       &trans &trans &trans &trans       &sl 9     &trans    &trans    &trans    &skm LGUI  &trans
                  &sl 6        &sl 4  &sl 3                          &trans    &trans    &trans
                         >;
                 };
