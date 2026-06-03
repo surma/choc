@@ -423,7 +423,7 @@
    &trans  &kp CRRT  &kp LT    &kp EQUAL &kp GT    &kp HASH       &kp GRAVE &kp LBKT &kp DQT  &kp RBKT  &kp EXCL  &trans
    &trans  &kp SLASH &kp AT    &kp ASTRK &kp MINUS &kp PLUS       &kp SQT   &kp LPAR &kp COLN &kp RPAR  &kp SEMI  &trans
    &trans  &kp BSLH  &kp UNDER &kp AMPS  &kp TILDE &kp PRCNT      &kp DLLR  &kp LBRC &kp PIPE &kp RBRC  &kp QMARK &trans
-                               &trans    &trans    &trans         &kp RET   &trans   &kp RALT
+                               &trans    &trans    &trans         &trans    &trans   &kp RALT
                         >;
                 };
 
