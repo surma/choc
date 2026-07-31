@@ -1,5 +1,5 @@
 {
-  description = "Offline ZMK firmware build for Chocifi";
+  description = "Offline ZMK firmware build for SurmToucan";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
@@ -32,6 +32,7 @@
           packaging
           patool
           progress
+          protobuf
           psutil
           pyelftools
           pykwalify
@@ -65,7 +66,7 @@
 
           pythonEnv = pkgs.python3.withPackages pythonPackages;
 
-          pinnedWorkspace = pkgs.runCommand "chocifi-zmk-workspace" { } ''
+          pinnedWorkspace = pkgs.runCommand "surm-toucan-zmk-workspace" { } ''
             set -euo pipefail
             mkdir -p "$out"
             ${lib.concatMapStrings (source: ''
@@ -79,14 +80,16 @@
 
           buildTargets = [
             {
-              board = "nice_nano";
-              shield = "corne_left";
-              artifactName = "corne_left-nice_nano-zmk";
+              board = "seeeduino_xiao_ble";
+              shield = "toucan_left rgbled_adapter nice_view_gem";
+              cmakeArgs = "-DSNIPPET=studio-rpc-usb-uart -DCONFIG_ZMK_STUDIO=y";
+              artifactName = "toucan_left-seeeduino_xiao_ble-zmk";
             }
             {
-              board = "nice_nano";
-              shield = "corne_right";
-              artifactName = "corne_right-nice_nano-zmk";
+              board = "seeeduino_xiao_ble";
+              shield = "toucan_right rgbled_adapter";
+              cmakeArgs = "";
+              artifactName = "toucan_right-seeeduino_xiao_ble-zmk";
             }
           ];
 
@@ -102,7 +105,7 @@
         in
         rec {
           firmware = pkgs.stdenvNoCC.mkDerivation {
-            pname = "chocifi-firmware";
+            pname = "surm-toucan-firmware";
             version = firmwareVersion;
 
             dontUnpack = true;
@@ -117,6 +120,7 @@
               gperf
               ninja
               pythonEnv
+              protobuf
               unzip
               which
               zip
@@ -131,11 +135,12 @@
               export SOURCE_DATE_EPOCH=315532800
               export ZEPHYR_TOOLCHAIN_VARIANT=gnuarmemb
               export GNUARMEMB_TOOLCHAIN_PATH=${pkgs.gcc-arm-embedded}
+              export PYTHONPATH="${pythonEnv}/${pkgs.python3.sitePackages}''${PYTHONPATH:+:$PYTHONPATH}"
               export ZEPHYR_BASE="$TMPDIR/workspace/zephyr"
 
               mkdir -p "$HOME" "$XDG_CACHE_HOME"
 
-              repoRoot="$TMPDIR/chocifi-module"
+              repoRoot="$TMPDIR/surm-toucan-module"
               baseDir="$TMPDIR/workspace"
               artifactsDir="$TMPDIR/artifacts"
 
@@ -143,6 +148,11 @@
 
               cp -R ${pinnedWorkspace}/. "$baseDir/"
               chmod -R u+w "$baseDir"
+
+              # ZMK v0.3's Nanopb imports pkg_resources unconditionally, but
+              # uses it only with grpcio-tools. Current Setuptools removed the
+              # unused module, and this build does not provide grpcio-tools.
+              sed -i '/^import pkg_resources$/d' "$baseDir/modules/lib/nanopb/generator/proto/__init__.py"
 
               mkdir -p "$repoRoot/config" "$repoRoot/boards" "$repoRoot/zephyr"
               cp -R ${./config}/. "$repoRoot/config/"
@@ -172,7 +182,7 @@ EOF
               popd >/dev/null
 
               ${lib.concatMapStrings (target: ''
-                buildDir="$TMPDIR/build-${target.shield}"
+                buildDir="$TMPDIR/build-${target.artifactName}"
                 rm -rf "$buildDir"
                 mkdir -p "$buildDir"
 
@@ -185,7 +195,7 @@ EOF
                   -DBUILD_VERSION=${firmwareVersion} \
                   -DZMK_CONFIG="$baseDir/config" \
                   -DZMK_EXTRA_MODULES="$repoRoot" \
-                  -DSHIELD=${target.shield}
+                  -DSHIELD='${target.shield}' ${target.cmakeArgs}
                 popd >/dev/null
 
                 if [ -f "$buildDir/zephyr/zmk.uf2" ]; then
@@ -237,6 +247,7 @@ EOF
               pkgs.git
               pkgs.ninja
               pkgs.python3
+              pkgs.protobuf
               pkgs.unzip
               pkgs.which
               pkgs.zip

@@ -1,274 +1,58 @@
-# Generated from config/west.yml, zmk app/west.yml, and zephyr west.yml.
+# Generated from config/west.yml, ZMK v0.3 app/west.yml, and Zephyr west.yml.
 # Mirrors the GitHub Actions workspace layout without running `west update` during the Nix build.
 [
-  {
-    name = "nrf_hw_models";
-    path = "modules/bsim_hw_models/nrf_hw_models";
-    url = "https://github.com/zephyrproject-rtos/nrf_hw_models.git";
-    rev = "73a5d5827a94820be65b7d276d28173ec10bab9f";
-  }
-  {
-    name = "mbedtls";
-    path = "modules/crypto/mbedtls";
-    url = "https://github.com/zephyrproject-rtos/mbedtls.git";
-    rev = "4952e1328529ee549d412b498ea71c54f30aa3b1";
-  }
-  {
-    name = "tinycrypt";
-    path = "modules/crypto/tinycrypt";
-    url = "https://github.com/zephyrproject-rtos/tinycrypt.git";
-    rev = "1012a3ebee18c15ede5efc8332ee2fc37817670f";
-  }
-  {
-    name = "mipi-sys-t";
-    path = "modules/debug/mipi-sys-t";
-    url = "https://github.com/zephyrproject-rtos/mipi-sys-t.git";
-    rev = "33e5c23cbedda5ba12dbe50c4baefb362a791001";
-  }
-  {
-    name = "percepio";
-    path = "modules/debug/percepio";
-    url = "https://github.com/zephyrproject-rtos/percepio.git";
-    rev = "49e6dc202aa38c2a3edbafcc2dab85dec6aee973";
-  }
-  {
-    name = "segger";
-    path = "modules/debug/segger";
-    url = "https://github.com/zephyrproject-rtos/segger.git";
-    rev = "cf56b1d9c80f81a26e2ac5727c9cf177116a4692";
-  }
-  {
-    name = "fatfs";
-    path = "modules/fs/fatfs";
-    url = "https://github.com/zephyrproject-rtos/fatfs.git";
-    rev = "16245c7c41d2b79e74984f49b5202551786b8a9b";
-  }
-  {
-    name = "littlefs";
-    path = "modules/fs/littlefs";
-    url = "https://github.com/zephyrproject-rtos/littlefs.git";
-    rev = "ed0531d59ee37f5fb2762bcf2fc8ba4efaf82656";
-  }
-  {
-    name = "hal_adi";
-    path = "modules/hal/adi";
-    url = "https://github.com/zephyrproject-rtos/hal_adi.git";
-    rev = "633fcecf3717aaa22079cf6121627a879f24df51";
-  }
-  {
-    name = "hal_ambiq";
-    path = "modules/hal/ambiq";
-    url = "https://github.com/zephyrproject-rtos/hal_ambiq.git";
-    rev = "87a188b91aca22ce3ce7deb4a1cbf7780d784673";
-  }
-  {
-    name = "hal_atmel";
-    path = "modules/hal/atmel";
-    url = "https://github.com/zephyrproject-rtos/hal_atmel.git";
-    rev = "da767444cce3c1d9ccd6b8a35fd7c67dc82d489c";
-  }
-  {
-    name = "cmsis";
-    path = "modules/hal/cmsis";
-    url = "https://github.com/zephyrproject-rtos/cmsis.git";
-    rev = "d1b8b20b6278615b00e136374540eb1c00dcabe7";
-  }
-  {
-    name = "hal_espressif";
-    path = "modules/hal/espressif";
-    url = "https://github.com/zephyrproject-rtos/hal_espressif.git";
-    rev = "202c59552dc98e5cd02386313e1977ecb17a131f";
-  }
-  {
-    name = "hal_ethos_u";
-    path = "modules/hal/ethos_u";
-    url = "https://github.com/zephyrproject-rtos/hal_ethos_u.git";
-    rev = "50ddffca1cc700112f25ad9bc077915a0355ee5d";
-  }
-  {
-    name = "hal_gigadevice";
-    path = "modules/hal/gigadevice";
-    url = "https://github.com/zephyrproject-rtos/hal_gigadevice.git";
-    rev = "2994b7dde8b0b0fa9b9c0ccb13474b6a486cddc3";
-  }
-  {
-    name = "hal_intel";
-    path = "modules/hal/intel";
-    url = "https://github.com/zephyrproject-rtos/hal_intel.git";
-    rev = "0355bb816263c54eed23c7781034447af5d8200c";
-  }
-  {
-    name = "libmetal";
-    path = "modules/hal/libmetal";
-    url = "https://github.com/zephyrproject-rtos/libmetal.git";
-    rev = "3e8781aae9d7285203118c05bc01d4eb0ca565a7";
-  }
-  {
-    name = "hal_nordic";
-    path = "modules/hal/nordic";
-    url = "https://github.com/zephyrproject-rtos/hal_nordic.git";
-    rev = "37ca068d7b013fb65a2acc9306bffa48a3e72839";
-  }
-  {
-    name = "hal_nuvoton";
-    path = "modules/hal/nuvoton";
-    url = "https://github.com/zephyrproject-rtos/hal_nuvoton.git";
-    rev = "466c3eed9c98453fb23953bf0e0427fea01924be";
-  }
-  {
-    name = "hal_quicklogic";
-    path = "modules/hal/quicklogic";
-    url = "https://github.com/zephyrproject-rtos/hal_quicklogic.git";
-    rev = "bad894440fe72c814864798c8e3a76d13edffb6c";
-  }
-  {
-    name = "hal_renesas";
-    path = "modules/hal/renesas";
-    url = "https://github.com/zephyrproject-rtos/hal_renesas.git";
-    rev = "3204903bdc5eda6869a40363560a69369c8d0e22";
-  }
-  {
-    name = "hal_rpi_pico";
-    path = "modules/hal/rpi_pico";
-    url = "https://github.com/zephyrproject-rtos/hal_rpi_pico.git";
-    rev = "7b57b24588797e6e7bf18b6bda168e6b96374264";
-  }
-  {
-    name = "hal_silabs";
-    path = "modules/hal/silabs";
-    url = "https://github.com/zephyrproject-rtos/hal_silabs.git";
-    rev = "8a173e9e566a396a19d18da4661cb54ce098f268";
-  }
-  {
-    name = "hal_stm32";
-    path = "modules/hal/stm32";
-    url = "https://github.com/zmkfirmware/hal_stm32.git";
-    rev = "4fcc3a3f32abe1c4cb76d9d1cef967728dd03908";
-  }
-  {
-    name = "hal_tdk";
-    path = "modules/hal/tdk";
-    url = "https://github.com/zephyrproject-rtos/hal_tdk.git";
-    rev = "6727477af1e46fa43878102489b9672a9d24e39f";
-  }
-  {
-    name = "hal_telink";
-    path = "modules/hal/telink";
-    url = "https://github.com/zephyrproject-rtos/hal_telink.git";
-    rev = "4226c7fc17d5a34e557d026d428fc766191a0800";
-  }
-  {
-    name = "hal_wch";
-    path = "modules/hal/wch";
-    url = "https://github.com/zephyrproject-rtos/hal_wch.git";
-    rev = "1de9d3e406726702ce7cfc504509a02ecc463554";
-  }
-  {
-    name = "hal_wurthelektronik";
-    path = "modules/hal/wurthelektronik";
-    url = "https://github.com/zephyrproject-rtos/hal_wurthelektronik.git";
-    rev = "e3e2797b224fc48fdef1bc3e5a12a7c73108bba2";
-  }
-  {
-    name = "acpica";
-    path = "modules/lib/acpica";
-    url = "https://github.com/zephyrproject-rtos/acpica.git";
-    rev = "8d24867bc9c9d81c81eeac59391cda59333affd4";
-  }
-  {
-    name = "cmsis-dsp";
-    path = "modules/lib/cmsis-dsp";
-    url = "https://github.com/zephyrproject-rtos/cmsis-dsp.git";
-    rev = "d80a49b2bb186317dc1db4ac88da49c0ab77e6e7";
-  }
-  {
-    name = "cmsis-nn";
-    path = "modules/lib/cmsis-nn";
-    url = "https://github.com/zephyrproject-rtos/cmsis-nn.git";
-    rev = "e9328d612ea3ea7d0d210d3ac16ea8667c01abdd";
-  }
-  {
-    name = "cmsis_6";
-    path = "modules/lib/cmsis_6";
-    url = "https://github.com/zephyrproject-rtos/CMSIS_6.git";
-    rev = "783317a3072554acbac86cca2ff24928cbf98d30";
-  }
-  {
-    name = "lvgl";
-    path = "modules/lib/gui/lvgl";
-    url = "https://github.com/zmkfirmware/lvgl.git";
-    rev = "f1db87ee98f1810328a8419572fa42a3b5f352ae";
-  }
-  {
-    name = "hostap";
-    path = "modules/lib/hostap";
-    url = "https://github.com/zephyrproject-rtos/hostap.git";
-    rev = "697fd2cf5cbbd0c5375fc34761b6a9d7489a67d2";
-  }
-  {
-    name = "liblc3";
-    path = "modules/lib/liblc3";
-    url = "https://github.com/zephyrproject-rtos/liblc3.git";
-    rev = "48bbd3eacd36e99a57317a0a4867002e0b09e183";
-  }
-  {
-    name = "libmctp";
-    path = "modules/lib/libmctp";
-    url = "https://github.com/zephyrproject-rtos/libmctp.git";
-    rev = "b97860e78998551af99931ece149eeffc538bdb1";
-  }
-  {
-    name = "nrf_wifi";
-    path = "modules/lib/nrf_wifi";
-    url = "https://github.com/zephyrproject-rtos/nrf_wifi.git";
-    rev = "e35f707a782b7c4c0eb83a3b06ca4e6eb693f29f";
-  }
-  {
-    name = "open-amp";
-    path = "modules/lib/open-amp";
-    url = "https://github.com/zephyrproject-rtos/open-amp.git";
-    rev = "52bb1783521c62c019451cee9b05b8eda9d7425f";
-  }
-  {
-    name = "picolibc";
-    path = "modules/lib/picolibc";
-    url = "https://github.com/zephyrproject-rtos/picolibc.git";
-    rev = "82d62ed1ac55b4e34a12d0390aced2dc9af13fc9";
-  }
-  {
-    name = "uoscore-uedhoc";
-    path = "modules/lib/uoscore-uedhoc";
-    url = "https://github.com/zephyrproject-rtos/uoscore-uedhoc.git";
-    rev = "54abc109c9c0adfd53c70077744c14e454f04f4a";
-  }
-  {
-    name = "zcbor";
-    path = "modules/lib/zcbor";
-    url = "https://github.com/zephyrproject-rtos/zcbor.git";
-    rev = "9b07780aca6fb21f82a241ba386ad9b379809337";
-  }
-  {
-    name = "zmk-studio-messages";
-    path = "modules/msgs/zmk-studio-messages";
-    url = "https://github.com/zmkfirmware/zmk-studio-messages.git";
-    rev = "6cb4c283e76209d59c45fbcb218800cd19e9339d";
-  }
-  {
-    name = "trusted-firmware-a";
-    path = "modules/tee/tf-a/trusted-firmware-a";
-    url = "https://github.com/zephyrproject-rtos/trusted-firmware-a.git";
-    rev = "713ffbf96c5bcbdeab757423f10f73eb304eff07";
-  }
-  {
-    name = "zephyr";
-    path = "zephyr";
-    url = "https://github.com/zmkfirmware/zephyr.git";
-    rev = "ec36516990d40355238db3049bc1709191f99b4e";
-  }
-  {
-    name = "zmk";
-    path = "zmk";
-    url = "https://github.com/zmkfirmware/zmk.git";
-    rev = "6e7e0de2b621073392816b284ab4931bee709ee8";
-  }
+  { name = "acpica"; path = "modules/lib/acpica"; url = "https://github.com/zephyrproject-rtos/acpica.git"; rev = "0333c2af13179f9b33d495cf7cb9a509f751cbb1"; }
+  { name = "bsim"; path = "tools/bsim"; url = "https://github.com/zephyrproject-rtos/babblesim-manifest"; rev = "384a091445c57b44ac8cbd18ebd245b47c71db94"; }
+  { name = "babblesim_base"; path = "tools/bsim/components"; url = "https://github.com/BabbleSim/base.git"; rev = "19d62424c0802c6c9fc15528febe666e40f372a1"; }
+  { name = "babblesim_ext_2G4_libPhyComv1"; path = "tools/bsim/components/ext_2G4_libPhyComv1"; url = "https://github.com/BabbleSim/ext_2G4_libPhyComv1.git"; rev = "9018113a362fa6c9e8f4b9cab9e5a8f12cc46b94"; }
+  { name = "babblesim_ext_2G4_phy_v1"; path = "tools/bsim/components/ext_2G4_phy_v1"; url = "https://github.com/BabbleSim/ext_2G4_phy_v1.git"; rev = "d47c6dd90035b41b14f6921785ccb7b8484868e2"; }
+  { name = "babblesim_ext_2G4_channel_NtNcable"; path = "tools/bsim/components/ext_2G4_channel_NtNcable"; url = "https://github.com/BabbleSim/ext_2G4_channel_NtNcable.git"; rev = "20a38c997f507b0aa53817aab3d73a462fff7af1"; }
+  { name = "babblesim_ext_2G4_channel_multiatt"; path = "tools/bsim/components/ext_2G4_channel_multiatt"; url = "https://github.com/BabbleSim/ext_2G4_channel_multiatt.git"; rev = "bde72a57384dde7a4310bcf3843469401be93074"; }
+  { name = "babblesim_ext_2G4_modem_magic"; path = "tools/bsim/components/ext_2G4_modem_magic"; url = "https://github.com/BabbleSim/ext_2G4_modem_magic.git"; rev = "cb70771794f0bf6f262aa474848611c68ae8f1ed"; }
+  { name = "babblesim_ext_2G4_modem_BLE_simple"; path = "tools/bsim/components/ext_2G4_modem_BLE_simple"; url = "https://github.com/BabbleSim/ext_2G4_modem_BLE_simple.git"; rev = "809ab073159c9ab6686c2fea5749b0702e0909f7"; }
+  { name = "babblesim_ext_2G4_device_burst_interferer"; path = "tools/bsim/components/ext_2G4_device_burst_interferer"; url = "https://github.com/BabbleSim/ext_2G4_device_burst_interferer.git"; rev = "5b5339351d6e6a2368c686c734dc8b2fc65698fc"; }
+  { name = "babblesim_ext_2G4_device_WLAN_actmod"; path = "tools/bsim/components/ext_2G4_device_WLAN_actmod"; url = "https://github.com/BabbleSim/ext_2G4_device_WLAN_actmod.git"; rev = "9cb6d8e72695f6b785e57443f0629a18069d6ce4"; }
+  { name = "babblesim_ext_2G4_device_playback"; path = "tools/bsim/components/ext_2G4_device_playback"; url = "https://github.com/BabbleSim/ext_2G4_device_playback.git"; rev = "85c645929cf1ce995d8537107d9dcbd12ed64036"; }
+  { name = "babblesim_ext_libCryptov1"; path = "tools/bsim/components/ext_libCryptov1"; url = "https://github.com/BabbleSim/ext_libCryptov1.git"; rev = "eed6d7038e839153e340bd333bc43541cb90ba64"; }
+  { name = "canopennode"; path = "modules/lib/canopennode"; url = "https://github.com/zephyrproject-rtos/canopennode.git"; rev = "dec12fa3f0d790cafa8414a4c2930ea71ab72ffd"; }
+  { name = "cmsis"; path = "modules/hal/cmsis"; url = "https://github.com/zephyrproject-rtos/cmsis.git"; rev = "5a00331455dd74e31e80efa383a489faea0590e3"; }
+  { name = "cmsis-dsp"; path = "modules/lib/cmsis-dsp"; url = "https://github.com/zephyrproject-rtos/cmsis-dsp.git"; rev = "ff7b5fd1ea5f094665c090c343ec44e74dc0b193"; }
+  { name = "cmsis-nn"; path = "modules/lib/cmsis-nn"; url = "https://github.com/zephyrproject-rtos/cmsis-nn.git"; rev = "0c8669d81381ccf3b1a01d699f3b68b50134a99f"; }
+  { name = "fatfs"; path = "modules/fs/fatfs"; url = "https://github.com/zephyrproject-rtos/fatfs.git"; rev = "427159bf95ea49b7680facffaa29ad506b42709b"; }
+  { name = "hal_ambiq"; path = "modules/hal/ambiq"; url = "https://github.com/zephyrproject-rtos/hal_ambiq.git"; rev = "0a7c99325aa73a1ef777501da91c2c6608661e56"; }
+  { name = "hal_atmel"; path = "modules/hal/atmel"; url = "https://github.com/zephyrproject-rtos/hal_atmel.git"; rev = "5ab43007eda3f380c125f957f03638d2e8d1144d"; }
+  { name = "hal_espressif"; path = "modules/hal/espressif"; url = "https://github.com/zephyrproject-rtos/hal_espressif.git"; rev = "31fc5758f3507f8f0af00b1dea1a0df7af99bfc0"; }
+  { name = "hal_ethos_u"; path = "modules/hal/ethos_u"; url = "https://github.com/zephyrproject-rtos/hal_ethos_u.git"; rev = "90ada2ea5681b2a2722a10d2898eac34c2510791"; }
+  { name = "hal_gigadevice"; path = "modules/hal/gigadevice"; url = "https://github.com/zephyrproject-rtos/hal_gigadevice.git"; rev = "2994b7dde8b0b0fa9b9c0ccb13474b6a486cddc3"; }
+  { name = "hal_intel"; path = "modules/hal/intel"; url = "https://github.com/zephyrproject-rtos/hal_intel.git"; rev = "b3b43d4e3da7ba483611bbbea7ef8af92c69df31"; }
+  { name = "hal_nordic"; path = "modules/hal/nordic"; url = "https://github.com/zephyrproject-rtos/hal_nordic.git"; rev = "884c4d61746bc35fbd379c169fc87ddb56c6461d"; }
+  { name = "hal_nuvoton"; path = "modules/hal/nuvoton"; url = "https://github.com/zephyrproject-rtos/hal_nuvoton.git"; rev = "3e0a4c4d3328b2f72b164219add19d5308b53cb5"; }
+  { name = "hal_quicklogic"; path = "modules/hal/quicklogic"; url = "https://github.com/zephyrproject-rtos/hal_quicklogic"; rev = "b3a66fe6d04d87fd1533a5c8de51d0599fcd08d0"; }
+  { name = "hal_renesas"; path = "modules/hal/renesas"; url = "https://github.com/zephyrproject-rtos/hal_renesas.git"; rev = "a6cf2af9140e014fbbc48d2b6deb802231dd369f"; }
+  { name = "hal_rpi_pico"; path = "modules/hal/rpi_pico"; url = "https://github.com/zephyrproject-rtos/hal_rpi_pico.git"; rev = "fba7162cc7bee06d0149622bbcaac4e41062d368"; }
+  { name = "hal_stm32"; path = "modules/hal/stm32"; url = "https://github.com/zephyrproject-rtos/hal_stm32.git"; rev = "89ef0a3383edebf661073073bcdf6e2836fe90ee"; }
+  { name = "hal_telink"; path = "modules/hal/telink"; url = "https://github.com/zephyrproject-rtos/hal_telink.git"; rev = "38573af589173259801ae6c2b34b7d4c9e626746"; }
+  { name = "hal_wurthelektronik"; path = "modules/hal/wurthelektronik"; url = "https://github.com/zephyrproject-rtos/hal_wurthelektronik.git"; rev = "24ca9873c3d608fad1fea0431836bc8f144c132e"; }
+  { name = "libmetal"; path = "modules/hal/libmetal"; url = "https://github.com/zephyrproject-rtos/libmetal.git"; rev = "b91611a6f47dd29fb24c46e5621e797557f80ec6"; }
+  { name = "liblc3"; path = "modules/lib/liblc3"; url = "https://github.com/zephyrproject-rtos/liblc3.git"; rev = "448f3de31f49a838988a162ef1e23a89ddf2d2ed"; }
+  { name = "littlefs"; path = "modules/fs/littlefs"; url = "https://github.com/zephyrproject-rtos/littlefs.git"; rev = "ca583fd297ceb48bced3c2548600dc615d67af24"; }
+  { name = "lvgl"; path = "modules/lib/gui/lvgl"; url = "https://github.com/zephyrproject-rtos/lvgl.git"; rev = "8a6a2d1d29d17d1e4bdc94c243c146a39d635fdd"; }
+  { name = "mbedtls"; path = "modules/crypto/mbedtls"; url = "https://github.com/zephyrproject-rtos/mbedtls.git"; rev = "c38dc78d9a8dcbe43b898cc1171ab33ba3e6fc26"; }
+  { name = "mipi-sys-t"; path = "modules/debug/mipi-sys-t"; url = "https://github.com/zephyrproject-rtos/mipi-sys-t.git"; rev = "a819419603a2dfcb47f7f39092e1bc112e45d1ef"; }
+  { name = "nrf_hw_models"; path = "modules/bsim_hw_models/nrf_hw_models"; url = "https://github.com/zephyrproject-rtos/nrf_hw_models.git"; rev = "f4595802d32d103718bf50b3d390b7a450895843"; }
+  { name = "open-amp"; path = "modules/lib/open-amp"; url = "https://github.com/zephyrproject-rtos/open-amp.git"; rev = "42b7c577714b8f22ce82a901e19c1814af4609a8"; }
+  { name = "percepio"; path = "modules/debug/percepio"; url = "https://github.com/zephyrproject-rtos/percepio.git"; rev = "a3728efccc47dd372f40e6313589ca4c5cc7d5e9"; }
+  { name = "picolibc"; path = "modules/lib/picolibc"; url = "https://github.com/zephyrproject-rtos/picolibc.git"; rev = "d07c38ff051386f8e09a143ea0a6c1d6d66dd1d8"; }
+  { name = "segger"; path = "modules/debug/segger"; url = "https://github.com/zephyrproject-rtos/segger.git"; rev = "9d0191285956cef43daf411edc2f1a7788346def"; }
+  { name = "tinycrypt"; path = "modules/crypto/tinycrypt"; url = "https://github.com/zephyrproject-rtos/tinycrypt.git"; rev = "3e9a49d2672ec01435ffbf0d788db6d95ef28de0"; }
+  { name = "trusted-firmware-a"; path = "modules/tee/tf-a/trusted-firmware-a"; url = "https://github.com/zephyrproject-rtos/trusted-firmware-a.git"; rev = "421dc050278287839f5c70019bd6aec617f2bbdb"; }
+  { name = "uoscore-uedhoc"; path = "modules/lib/uoscore-uedhoc"; url = "https://github.com/zephyrproject-rtos/uoscore-uedhoc.git"; rev = "5fe2cb613bd7e4590bd1b00c2adf181ac0229379"; }
+  { name = "zcbor"; path = "modules/lib/zcbor"; url = "https://github.com/zephyrproject-rtos/zcbor.git"; rev = "67fd8bb88d3136738661fa8bb5f9989103f4599e"; }
+  { name = "nanopb"; path = "modules/lib/nanopb"; url = "https://github.com/zmkfirmware/nanopb.git"; rev = "8c60555d6277a0360c876bd85d491fc4fb0cd74a"; }
+  { name = "zmk-studio-messages"; path = "modules/msgs/zmk-studio-messages"; url = "https://github.com/zmkfirmware/zmk-studio-messages.git"; rev = "6cb4c283e76209d59c45fbcb218800cd19e9339d"; }
+  { name = "zephyr"; path = "zephyr"; url = "https://github.com/zmkfirmware/zephyr.git"; rev = "dacab4875df72109b96cc8977547a0dc04875bcd"; }
+  { name = "zmk"; path = "zmk"; url = "https://github.com/zmkfirmware/zmk.git"; rev = "edf5c0814fd3ea202e43aad2d68fd32e882a518c"; }
+  { name = "zmk-keyboard-toucan"; path = "modules/zmk-keyboard-toucan"; url = "https://github.com/beekeeb/zmk-keyboard-toucan.git"; rev = "7154e0187128e493cd15785a18af1546419d5bb1"; }
+  { name = "cirque-input-module"; path = "cirque-input-module"; url = "https://github.com/geeksville/cirque-input-module.git"; rev = "effec100f0cd3a38e7fba3adfea394586cc84cab"; }
+  { name = "zmk-rgbled-widget"; path = "zmk-rgbled-widget"; url = "https://github.com/caksoylar/zmk-rgbled-widget.git"; rev = "8756cb7b8114069fa3c25c6f6c990f24988fceff"; }
 ]

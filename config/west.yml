@@ -1,13 +1,28 @@
 manifest:
+  defaults:
+    revision: v0.3
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: beekeeb
+      url-base: https://github.com/beekeeb
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    - name: geeksville
+      url-base: https://github.com/geeksville
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: 6e7e0de2b621073392816b284ab4931bee709ee8
       import: app/west.yml
+    - name: zmk-keyboard-toucan
+      remote: beekeeb
+      revision: 7154e0187128e493cd15785a18af1546419d5bb1
+      path: modules/zmk-keyboard-toucan
+    - name: cirque-input-module
+      remote: geeksville
+      revision: toucan
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: v0.3
   self:
     path: config
