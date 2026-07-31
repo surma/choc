@@ -8,9 +8,9 @@ def auto_detect_target [] {
   let os = (sys host | get name)
 
   if $os == "Darwin" {
-    "/Volumes/NICENANO/new.uf2"
+    "/Volumes/XIAO-BOOT/new.uf2"
   } else {
-    let device = (udisksctl status | from ssv | drop nth 0 | where MODEL =~ Adafruit | update DEVICE { $"/dev/($in)" } | get DEVICE.0)
+    let device = (udisksctl status | from ssv | drop nth 0 | where MODEL =~ "XIAO nRF52840" | update DEVICE { $"/dev/($in)" } | get DEVICE.0)
     let mount_point = (udisksctl mount -b $device | split row " " | last)
     $"($mount_point)/new.uf2"
   }
@@ -42,14 +42,14 @@ def flash_requested_sides [zip: string, left: bool, right: bool, target?: string
     print "Please connect the left board and put it into bootloader mode..."
     wait
     let left_target = (get_target_path $target)
-    flash_firmware $zip "corne_left-nice_nano-zmk.uf2" $left_target
+    flash_firmware $zip "toucan_left-seeeduino_xiao_ble-zmk.uf2" $left_target
   }
 
   if $flash_right {
     print "Please connect the right board and put it into bootloader mode..."
     wait
     let right_target = (get_target_path $target)
-    flash_firmware $zip "corne_right-nice_nano-zmk.uf2" $right_target
+    flash_firmware $zip "toucan_right-seeeduino_xiao_ble-zmk.uf2" $right_target
   }
 }
 
