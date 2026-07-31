@@ -568,7 +568,7 @@
 };
 
 &glidepoint_listener {
-        input-processors = <&touch_pointer_layer &zip_xy_scaler 250 100>;
+        input-processors = <&touch_pointer_layer &zip_xy_scaler 250 100 &zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
         scroller {
                 layers = <1 2 10>;
