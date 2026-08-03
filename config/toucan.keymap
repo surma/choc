@@ -30,6 +30,12 @@
 			    quick-tap-ms = <200>;
 			    bindings = <&kp>, <&kp>;
 			};
+			mouse_entry: mouse_entry {
+			    compatible = "zmk,behavior-tap-dance";
+			    #binding-cells = <0>;
+			    tapping-term-ms = <200>;
+			    bindings = <&sl 6>, <&to 5>;
+			};
 			skm: sticky_mods {
 			    compatible = "zmk,behavior-sticky-key";
 			    #binding-cells = <1>;
@@ -472,12 +478,12 @@
 // |            |       |          |          |          |        |   | SCROLL      | LCLICK       | MCLICK       | RCLICK        |       |      |
 // |            |       |          |          |          |        |   |             |              |              |               |       |      |
 // |            |       |          |          |          |        |   |             |              |              |               |       |      |
-//                                 |          |          |        |   |              |              |              |
+//                                 | BASE     |          |        |   |              |              |              |
                         bindings = <
     &trans       &trans  &trans     &trans     &trans     &trans       &mo 10         &mkp LCLK      &mkp MCLK      &mkp RCLK       &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
-                                    &trans     &trans     &trans       &trans         &trans         &trans
+                                    &to 0      &trans     &trans       &trans         &trans         &trans
                         >;
                 };
 
@@ -517,12 +523,12 @@
 // |      |       |      |      |      |        |   |        |        |        |         | Ctrl  |      |
 // |      |       |      |      |      |        |   |        |        |        |         | Alt   |      |
 // |      |       |      |      |      |        |   | KBD    |        |        |         | Super |      |
-//                       |  UC  | MEDIA |  NUM   |   |        |        |        |
+//                       | UC/PTR | MEDIA |  NUM   |   |        |        |        |
                         bindings = <
     &trans       &trans       &trans &trans &trans &trans       &kp LG(LA(SPACE)) &trans    &trans    &trans    &skm LCTRL &trans
     &trans       &trans       &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &skm LALT  &trans
     &trans       &trans       &trans &trans &trans &trans       &sl 9     &trans    &trans    &trans    &skm LGUI  &trans
-                 &sl 6        &sl 4  &sl 3                          &trans    &trans    &trans
+                 &mouse_entry &sl 4  &sl 3                          &trans    &trans    &trans
                         >;
                 };
 
@@ -568,14 +574,14 @@
 };
 
 &glidepoint_listener {
-        input-processors = <&touch_pointer_layer &zip_xy_scaler 250 100 &zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+        input-processors = <&touch_pointer_layer &zip_xy_scaler 100 100 &zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
         scroller {
                 layers = <1 2 10>;
                 input-processors = <
                         &touch_pointer_layer
                         &zip_xy_to_scroll_mapper
-                        &zip_scroll_scaler 1 5
+                        &zip_scroll_scaler 1 20
                         &zip_scroll_transform INPUT_TRANSFORM_X_INVERT
                 >;
         };
