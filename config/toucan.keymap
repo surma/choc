@@ -34,7 +34,7 @@
 			    compatible = "zmk,behavior-tap-dance";
 			    #binding-cells = <0>;
 			    tapping-term-ms = <200>;
-			    bindings = <&sl 6>, <&to 5>;
+			    bindings = <&sl 6>, <&to 11>;
 			};
 			skm: sticky_mods {
 			    compatible = "zmk,behavior-sticky-key";
@@ -478,12 +478,12 @@
 // |            |       |          |          |          |        |   | SCROLL      | LCLICK       | MCLICK       | RCLICK        |       |      |
 // |            |       |          |          |          |        |   |             |              |              |               |       |      |
 // |            |       |          |          |          |        |   |             |              |              |               |       |      |
-//                                 | BASE     |          |        |   |              |              |              |
+//                                 |          |          |        |   |              |              |              |
                         bindings = <
     &trans       &trans  &trans     &trans     &trans     &trans       &mo 10         &mkp LCLK      &mkp MCLK      &mkp RCLK       &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
-                                    &to 0      &trans     &trans       &trans         &trans         &trans
+                                    &trans     &trans     &trans       &trans         &trans         &trans
                         >;
                 };
 
@@ -554,6 +554,21 @@
     &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
     &trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
                                     &trans &trans &trans       &trans &trans &trans
+                        >;
+                };
+
+                persistent_mouse {
+                        display-name = "PTR";
+// -----------------------------------------------------------------------------------------
+// |            |       |          |          |          |        |   | SCROLL      | LCLICK       | MCLICK       | RCLICK        |       |      |
+// |            |       |          |          |          |        |   |             |              |              |               |       |      |
+// |            |       |          |          |          |        |   |             |              |              |               |       |      |
+//                                 | BASE     |          |        |   |              |              |              |
+                        bindings = <
+    &trans       &trans  &trans     &trans     &trans     &trans       &mo 10         &mkp LCLK      &mkp MCLK      &mkp RCLK       &trans  &trans
+    &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
+    &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
+                                    &to 0      &trans     &trans       &trans         &trans         &trans
                         >;
                 };
 
