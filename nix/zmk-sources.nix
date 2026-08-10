@@ -53,6 +53,10 @@
   { name = "zephyr"; path = "zephyr"; url = "https://github.com/zmkfirmware/zephyr.git"; rev = "dacab4875df72109b96cc8977547a0dc04875bcd"; }
   { name = "zmk"; path = "zmk"; url = "https://github.com/zmkfirmware/zmk.git"; rev = "5138c6fb14783b756c5a3e61581625c700f3555b"; }
   { name = "zmk-keyboard-toucan"; path = "modules/zmk-keyboard-toucan"; url = "https://github.com/beekeeb/zmk-keyboard-toucan.git"; rev = "7154e0187128e493cd15785a18af1546419d5bb1"; }
-  { name = "cirque-input-module"; path = "cirque-input-module"; url = "https://github.com/geeksville/cirque-input-module.git"; rev = "effec100f0cd3a38e7fba3adfea394586cc84cab"; }
+  # This fork includes fixes for two Toucan lockups:
+  # https://github.com/geeksville/cirque-input-module/pull/4
+  # https://github.com/geeksville/cirque-input-module/pull/5
+  # Return to the upstream module after both fixes reach its `toucan` branch.
+  { name = "cirque-input-module"; path = "cirque-input-module"; url = "https://github.com/kalbasit/cirque-input-module.git"; rev = "c3e1fcfd8f9fba2e1f8f09ed664822870bce61ca"; }
   { name = "zmk-rgbled-widget"; path = "zmk-rgbled-widget"; url = "https://github.com/caksoylar/zmk-rgbled-widget.git"; rev = "8756cb7b8114069fa3c25c6f6c990f24988fceff"; }
 ]

@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/beekeeb
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: geeksville
-      url-base: https://github.com/geeksville
+    - name: kalbasit
+      url-base: https://github.com/kalbasit
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,9 +19,15 @@ manifest:
       remote: beekeeb
       revision: 7154e0187128e493cd15785a18af1546419d5bb1
       path: modules/zmk-keyboard-toucan
+    # This fork includes fixes for two Toucan lockups:
+    # https://github.com/geeksville/cirque-input-module/pull/4
+    # https://github.com/geeksville/cirque-input-module/pull/5
+    # PR 4 prevents input congestion from blocking the system work queue.
+    # PR 5 rearms the data-ready interrupt after failed or empty SPI reads.
+    # Return to the upstream module after both fixes reach its `toucan` branch.
     - name: cirque-input-module
-      remote: geeksville
-      revision: toucan
+      remote: kalbasit
+      revision: c3e1fcfd8f9fba2e1f8f09ed664822870bce61ca
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
