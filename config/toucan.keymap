@@ -447,12 +447,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |       |      |      |   /   |   *    |   |         |   7    |   8    |    9    |       |      |
 // |      |       |      |      |   -   |   +    |   |         |   4    |   5    |    6    |       |      |
-// |      |       |      |      |   ,   |   .    |   |         |   1    |   2    |    3    |       |      |
+// |      |       |      |  :   |   ,   |   .    |   |         |   1    |   2    |    3    |       |      |
 //                       |      |       |        |   |         |  BSP   |   0    |
                         bindings = <
     &trans &trans  &trans &trans &kp FSLH &kp ASTRK   &trans    &kp N7   &kp N8   &kp N9    &trans  &trans
     &trans &trans  &trans &trans &kp MINUS &kp PLUS   &trans    &kp N4   &kp N5   &kp N6    &trans  &trans
-    &trans &trans  &trans &trans &kp COMMA &kp DOT    &trans    &kp N1   &kp N2   &kp N3    &trans  &trans
+    &trans &trans  &trans &kp COLN &kp COMMA &kp DOT  &trans    &kp N1   &kp N2   &kp N3    &trans  &trans
                           &trans &trans    &trans      &trans    &kp BSPC &kp N0
                         >;
                 };
