@@ -431,12 +431,12 @@
                         display-name = "NAV";
 // -----------------------------------------------------------------------------------------
 // |      | TAB     | ALT+LEFT |      | ALT+RIGHT |        |   | PGU    | DEL    | UP     | BSP     |       |      |
-// |      | ESC     | CMD+SFT+[|      | CMD+SFT+] |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
+// |      | ESC     | CTL+SFT+TAB |   | CTL+TAB  |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
 // |      | HYPER   | CTL+LEFT |      | CTL+RIGHT |        |   | CMD+D  | HOME   | CAPS   | END     |       |      |
   //                           |      |           |        |   |        |        |        |
                         bindings = <
     &trans &kp TAB   &kp LA(LEFT)    &trans  &kp LA(RIGHT)   &trans       &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
-    &trans &kp ESC   &kp LG(LS(LBRC)) &trans &kp LG(LS(RBRC)) &trans     &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
+    &trans &kp ESC   &kp LC(LS(TAB)) &trans &kp LC(TAB) &trans     &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
     &trans &skm MEH  &kp LC(LEFT)    &trans  &kp LC(RIGHT)   &trans       &kp LG(D) &kp HOME &kp CAPS &kp END  &trans  &trans
                                      &trans  &trans           &trans       &trans   &trans   &trans
                         >;
