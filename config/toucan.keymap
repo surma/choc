@@ -63,9 +63,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp N4>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_apo: uc_apo {
@@ -75,9 +75,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp N9>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_lquot: uc_lquot {
@@ -87,9 +87,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp C>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_rquot: uc_rquot {
@@ -99,9 +99,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N0 &kp N1 &kp D>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_sz: uc_sz {
@@ -111,9 +111,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N0 &kp N0 &kp D &kp F>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_euro: uc_euro {
@@ -123,9 +123,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N0 &kp A &kp C>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_pound: uc_pound {
@@ -135,9 +135,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N0 &kp N0 &kp A &kp N3>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_tm: uc_tm {
@@ -147,9 +147,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N1 &kp N2 &kp N2>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_joy: uc_joy {
@@ -159,10 +159,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp E &kp N0 &kp N2>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_sweat: uc_sweat {
@@ -172,10 +172,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp E &kp N0 &kp N5>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_cry: uc_cry {
@@ -185,10 +185,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp E &kp N2 &kp D>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_meh: uc_meh {
@@ -198,10 +198,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
 	                , <&macro_tap &kp D &kp D &kp N3 &kp N7>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_kiss: uc_kiss {
@@ -211,10 +211,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp E &kp N1 &kp N8>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_ohai: uc_ohai {
@@ -224,10 +224,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp E &kp N0 &kp F>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_roll: uc_roll {
@@ -237,10 +237,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp E &kp N4 &kp N4>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_monkey: uc_monkey {
@@ -250,10 +250,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp E &kp N4 &kp N8>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_eyes: uc_eyes {
@@ -263,10 +263,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp D>
 	                , <&macro_tap &kp D &kp C &kp N4 &kp N0>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_thinking: uc_thinking {
@@ -276,10 +276,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
 	                , <&macro_tap &kp D &kp D &kp N1 &kp N4>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_facepalm: uc_facepalm {
@@ -289,10 +289,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
 	                , <&macro_tap &kp D &kp D &kp N2 &kp N6>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_hug: uc_hug {
@@ -302,10 +302,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp E>
 	                , <&macro_tap &kp D &kp E &kp C &kp N2>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_party: uc_party {
@@ -315,10 +315,10 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp D &kp N8 &kp N3 &kp C>
 	                , <&macro_tap &kp D &kp F &kp N8 &kp N9>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_love: uc_love {
@@ -328,9 +328,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N7 &kp N6 &kp N4>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_cent: uc_cent {
@@ -340,9 +340,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N0 &kp N0 &kp A &kp N2>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_accent: uc_accent {
@@ -352,9 +352,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N0 &kp N3 &kp N0 &kp N1>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_diaer: uc_diaer {
@@ -364,9 +364,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N0 &kp N3 &kp N0 &kp N8>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_micro: uc_micro {
@@ -376,9 +376,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N0 &kp N3 &kp B &kp C>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
 	        uc_ellipsis: uc_ellipsis {
@@ -388,9 +388,9 @@
 	            tap-ms = <0>;
 	            wait-ms = <0>;
 	            bindings
-	                = <&macro_press &kp LALT>
+	                = <&macro_press &kp RALT>
 	                , <&macro_tap &kp N2 &kp N0 &kp N2 &kp N6>
-	                , <&macro_release &kp LALT>
+	                , <&macro_release &kp RALT>
 	                ;
 	        };
  	    };
@@ -431,12 +431,12 @@
                         display-name = "NAV";
 // -----------------------------------------------------------------------------------------
 // |      | TAB     | ALT+LEFT |      | ALT+RIGHT |        |   | PGU    | DEL    | UP     | BSP     |       |      |
-// |      | ESC     | CMD+SFT+[|      | CMD+SFT+] |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
+// |      | ESC     | CTL+SFT+TAB |   | CTL+TAB  |        |   | PGD    | LEFT   | DOWN   | RGHT    | RET   |      |
 // |      | HYPER   | CTL+LEFT |      | CTL+RIGHT |        |   | CMD+D  | HOME   | CAPS   | END     |       |      |
   //                           |      |           |        |   |        |        |        |
                         bindings = <
     &trans &kp TAB   &kp LA(LEFT)    &trans  &kp LA(RIGHT)   &trans       &kp PGUP &kp DEL  &kp UP   &kp BSPC  &trans  &trans
-    &trans &kp ESC   &kp LG(LS(LBRC)) &trans &kp LG(LS(RBRC)) &trans     &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
+    &trans &kp ESC   &kp LC(LS(TAB)) &trans &kp LC(TAB) &trans     &kp PGDN &kp LEFT &kp DOWN &kp RIGHT &kp RET &trans
     &trans &skm MEH  &kp LC(LEFT)    &trans  &kp LC(RIGHT)   &trans       &kp LG(D) &kp HOME &kp CAPS &kp END  &trans  &trans
                                      &trans  &trans           &trans       &trans   &trans   &trans
                         >;
