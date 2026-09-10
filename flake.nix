@@ -149,6 +149,10 @@
               cp -R ${pinnedWorkspace}/. "$baseDir/"
               chmod -R u+w "$baseDir"
 
+              # The workspace is copied after stdenv's patchPhase, so patch
+              # executable wrappers before using them in the Linux sandbox.
+              patchShebangs "$baseDir/modules/lib/nanopb/generator"
+
               # ZMK v0.3's Nanopb imports pkg_resources unconditionally, but
               # uses it only with grpcio-tools. Current Setuptools removed the
               # unused module, and this build does not provide grpcio-tools.
@@ -230,8 +234,47 @@ EOF
             '';
           };
 
+          flash = pkgs.stdenvNoCC.mkDerivation {
+            pname = "surm-toucan-flash";
+            version = firmwareVersion;
+            src = ./flash.nu;
+
+            dontUnpack = true;
+
+            nativeBuildInputs = [
+              pkgs.makeWrapper
+              pkgs.nushell
+            ];
+
+            installPhase = ''
+              runHook preInstall
+
+              install -Dm755 "$src" "$out/bin/flash"
+              patchShebangs "$out/bin/flash"
+              wrapProgram "$out/bin/flash" \
+                --set FLASH_FIRMWARE_OUTPUT ${firmware} \
+                --prefix PATH : ${
+                  lib.makeBinPath (
+                    [ pkgs.unzip ]
+                    ++ lib.optionals pkgs.stdenv.isLinux [ pkgs.udisks ]
+                  )
+                }
+
+              runHook postInstall
+            '';
+
+            meta.mainProgram = "flash";
+          };
+
           default = firmware;
         });
+
+      apps = forAllSystems (system: {
+        flash = {
+          type = "app";
+          program = "${self.packages.${system}.flash}/bin/flash";
+        };
+      });
 
       devShells = forAllSystems (system:
         let

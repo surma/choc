@@ -30,6 +30,14 @@
 			    quick-tap-ms = <200>;
 			    bindings = <&kp>, <&kp>;
 			};
+			meh_base: meh_base {
+			    compatible = "zmk,behavior-hold-tap";
+			    #binding-cells = <2>;
+			    flavor = "hold-preferred";
+			    tapping-term-ms = <200>;
+			    quick-tap-ms = <200>;
+			    bindings = <&kp>, <&to>;
+			};
 			mouse_entry: mouse_entry {
 			    compatible = "zmk,behavior-tap-dance";
 			    #binding-cells = <0>;
@@ -478,12 +486,12 @@
 // |            |       |          |          |          |        |   | SCROLL      | LCLICK       | MCLICK       | RCLICK        |       |      |
 // |            |       |          |          |          |        |   |             |              |              |               |       |      |
 // |            |       |          |          |          |        |   |             |              |              |               |       |      |
-//                                 | BASE     |          |        |   |              |              |              |
+//                                 | MEH/BASE |          |        |   |              |              |              |
                         bindings = <
     &trans       &trans  &trans     &trans     &trans     &trans       &mo 10         &mkp LCLK      &mkp MCLK      &mkp RCLK       &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
     &trans       &trans  &trans     &trans     &trans     &trans       &trans         &trans         &trans         &trans          &trans  &trans
-                                    &to 0      &trans     &trans       &trans         &trans         &trans
+                                    &meh_base MEH 0 &trans &trans       &trans         &trans         &trans
                         >;
                 };
 

@@ -10,7 +10,8 @@ def auto_detect_target [] {
   if $os == "Darwin" {
     "/Volumes/XIAO-BOOT/new.uf2"
   } else {
-    let device = (udisksctl status | from ssv | drop nth 0 | where MODEL =~ "XIAO nRF52840" | update DEVICE { $"/dev/($in)" } | get DEVICE.0)
+    let bootloader_models = ["XIAO nRF52840" "Adafruit nRF UF2"]
+    let device = (udisksctl status | from ssv | drop nth 0 | where {|drive| $drive.MODEL in $bootloader_models } | update DEVICE { $"/dev/($in)" } | get DEVICE.0)
     let mount_point = (udisksctl mount -b $device | split row " " | last)
     $"($mount_point)/new.uf2"
   }
@@ -70,9 +71,15 @@ def download_firmware_zip [token: string, repo: string, zip_file?: string] {
   $zip
 }
 
-def build_local_firmware_zip [] {
-  print "Building firmware locally with Nix..."
-  let output_path = (nix build .#firmware --no-link --print-out-paths | str trim)
+def get_local_firmware_zip [] {
+  let packaged_output = ($env | get -o FLASH_FIRMWARE_OUTPUT)
+  let output_path = if ($packaged_output | is-empty) {
+    print "Building firmware locally with Nix..."
+    nix build .#firmware --no-link --print-out-paths | str trim
+  } else {
+    $packaged_output
+  }
+
   let zip = $"($output_path)/firmware.zip"
   print $"Using local firmware from ($zip)."
 
@@ -105,7 +112,7 @@ def main [
         error make { msg: "--zip-file is only supported in download mode" }
       }
 
-      build_local_firmware_zip
+      get_local_firmware_zip
     }
     _ => {
       error make { msg: $"unknown mode '($mode)'; expected 'download' or 'local'" }
