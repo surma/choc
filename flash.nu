@@ -12,7 +12,9 @@ def auto_detect_target [] {
   } else {
     let bootloader_models = ["XIAO nRF52840" "Adafruit nRF UF2"]
     let device = (udisksctl status | from ssv | drop nth 0 | where {|drive| $drive.MODEL in $bootloader_models } | update DEVICE { $"/dev/($in)" } | get DEVICE.0)
-    let mount_point = (udisksctl mount -b $device | split row " " | last)
+    # UF2 bootloaders reboot as soon as every firmware block arrives. Keep
+    # Linux from retaining unwritten firmware blocks in its page cache.
+    let mount_point = (udisksctl mount -b $device -o sync | split row " " | last)
     $"($mount_point)/new.uf2"
   }
 }
@@ -28,10 +30,41 @@ def get_target_path [target?: string] {
 def flash_firmware [zip: string, firmware_file: string, target_path: string] {
   print "Flashing..."
   try {
-    unzip -p $zip $firmware_file | save -rp $target_path
-    print "Done."
+    let extract = (do { unzip -p $zip $firmware_file } | complete)
+    if $extract.exit_code != 0 {
+      error make { msg: ($extract.stderr | str trim) }
+    }
+
+    let firmware = $extract.stdout
+    let firmware_size = ($firmware | bytes length)
+
+    if $firmware_size mod 512 != 0 {
+      error make { msg: $"Invalid UF2 size: ($firmware_size) bytes" }
+    }
+
+    # Write one complete UF2 block at a time and wait for each write to reach
+    # the device. This prevents a reboot from stranding blocks in page cache.
+    let result = (with-env { LC_ALL: "C" } {
+      do {
+        $firmware
+        | dd $"of=($target_path)" bs=512 iflag=fullblock oflag=sync status=none
+      } | complete
+    })
+
+    if $result.exit_code == 0 {
+      print "Done."
+    } else {
+      # A successful UF2 flash removes the virtual drive immediately, which can
+      # make the final FAT metadata write return an I/O error.
+      sleep 500ms
+      if ($target_path | path exists) {
+        error make { msg: ($result.stderr | str trim) }
+      }
+
+      print "Done (bootloader rebooted)."
+    }
   } catch {|err|
-    print $"Something went wrong: ($err.msg)"
+    error make { msg: $"Flashing failed: ($err.msg)" }
   }
 }
 

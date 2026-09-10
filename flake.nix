@@ -255,7 +255,10 @@ EOF
                 --set FLASH_FIRMWARE_OUTPUT ${firmware} \
                 --prefix PATH : ${
                   lib.makeBinPath (
-                    [ pkgs.unzip ]
+                    [
+                      pkgs.coreutils
+                      pkgs.unzip
+                    ]
                     ++ lib.optionals pkgs.stdenv.isLinux [ pkgs.udisks ]
                   )
                 }
@@ -284,6 +287,7 @@ EOF
           default = pkgs.mkShell {
             packages = [
               pkgs.cmake
+              pkgs.coreutils
               pkgs.dtc
               pkgs.gcc-arm-embedded
               pkgs.gperf
