@@ -581,13 +581,18 @@
         };
 };
 
-&glidepoint_listener {
-        input-processors = <&touch_pointer_layer &zip_xy_scaler 100 100 &zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+&trackpad_listener {
+        input-processors = <
+                &zip_xy_scaler 100 100
+                &zip_scroll_scaler 1 20
+                &zip_zoom_mapper
+                &touch_pointer_layer
+                &swipe_button_mapper
+        >;
 
         scroller {
                 layers = <1 2 10>;
                 input-processors = <
-                        &touch_pointer_layer
                         &zip_xy_to_scroll_mapper
                         &zip_scroll_scaler 1 20
                         &zip_scroll_transform INPUT_TRANSFORM_X_INVERT

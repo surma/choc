@@ -1,5 +1,5 @@
 {
-  description = "Offline ZMK firmware build for SurmToucan";
+  description = "Offline ZMK firmware build for SurmToucan on Toucan2 hardware";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/release-25.11";
@@ -66,7 +66,7 @@
 
           pythonEnv = pkgs.python3.withPackages pythonPackages;
 
-          pinnedWorkspace = pkgs.runCommand "surm-toucan-zmk-workspace" { } ''
+          pinnedWorkspace = pkgs.runCommand "surm-toucan2-zmk-workspace" { } ''
             set -euo pipefail
             mkdir -p "$out"
             ${lib.concatMapStrings (source: ''
@@ -76,7 +76,7 @@
             '') zmkSources}
           '';
 
-          firmwareVersion = "2026-03-17";
+          firmwareVersion = "2026-09-11";
 
           buildTargets = [
             {
@@ -105,7 +105,7 @@
         in
         rec {
           firmware = pkgs.stdenvNoCC.mkDerivation {
-            pname = "surm-toucan-firmware";
+            pname = "surm-toucan2-firmware";
             version = firmwareVersion;
 
             dontUnpack = true;
@@ -140,7 +140,7 @@
 
               mkdir -p "$HOME" "$XDG_CACHE_HOME"
 
-              repoRoot="$TMPDIR/surm-toucan-module"
+              repoRoot="$TMPDIR/surm-toucan2-module"
               baseDir="$TMPDIR/workspace"
               artifactsDir="$TMPDIR/artifacts"
 
@@ -235,7 +235,7 @@ EOF
           };
 
           flash = pkgs.stdenvNoCC.mkDerivation {
-            pname = "surm-toucan-flash";
+            pname = "surm-toucan2-flash";
             version = firmwareVersion;
             src = ./flash.nu;
 
