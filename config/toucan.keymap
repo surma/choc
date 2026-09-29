@@ -529,12 +529,12 @@
                         display-name = "MOD";
 // -----------------------------------------------------------------------------------------
 // |      |       |      |      |      |        |   |        |        |        |         | Ctrl  |      |
-// |      |       |      |      |      |        |   |        |        |        |         | Alt   |      |
+// |      |       |      |      |      |        |   | KVM    |        |        |         | Alt   |      |
 // |      |       |      |      |      |        |   | KBD    |        |        |         | Super |      |
 //                       | UC/PTR | MEDIA |  NUM   |   |        |        |        |
                         bindings = <
     &trans       &trans       &trans &trans &trans &trans       &kp LG(LA(SPACE)) &trans    &trans    &trans    &skm LCTRL &trans
-    &trans       &trans       &trans &trans &trans &trans       &trans    &trans    &trans    &trans    &skm LALT  &trans
+    &trans       &trans       &trans &trans &trans &trans       &kp F24   &trans    &trans    &trans    &skm LALT  &trans
     &trans       &trans       &trans &trans &trans &trans       &sl 9     &trans    &trans    &trans    &skm LGUI  &trans
                  &mouse_entry &sl 4  &sl 3                          &trans    &trans    &trans
                         >;
