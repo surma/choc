@@ -1,0 +1,4 @@
+// ZMK applies this file before the shield overlay, so the trackpad node does
+// not exist here yet. The keymap applies last and uses this flag to configure
+// the right-half trackpad.
+#define TOUCAN_RIGHT_HALF

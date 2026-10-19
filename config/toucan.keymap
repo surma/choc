@@ -595,11 +595,17 @@
         };
 };
 
+#ifdef TOUCAN_RIGHT_HALF
+// Disable pinch-to-zoom so two-finger movement is always reported as scroll.
+&tps43_trackpad {
+        /delete-property/ zoom;
+};
+#endif
+
 &trackpad_listener {
         input-processors = <
                 &zip_xy_scaler 100 100
                 &zip_scroll_scaler 1 20
-                &zip_zoom_mapper
                 &touch_pointer_layer
                 &swipe_button_mapper
         >;
